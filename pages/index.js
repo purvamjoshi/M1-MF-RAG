@@ -5,7 +5,7 @@ export default function Home() {
   const [messages, setMessages] = useState([
     {
       type: 'bot',
-      text: "Hi! I'm your Groww Mutual Fund Assistant. Ask me anything about HDFC mutual funds - expense ratios, SIP amounts, lock-in periods, and more!",
+      text: "Hi! I'm your Groww MF Assistant. 😊\n\nI can help you find factual information about HDFC mutual funds - NAV, returns, expense ratios, SIP amounts, lock-in periods, portfolio holdings, and more!\n\nJust ask me anything!",
       timestamp: new Date()
     }
   ]);
@@ -40,6 +40,17 @@ export default function Home() {
     setInputText('');
     setLoading(true);
 
+    // Add typing indicator message
+    const typingId = Date.now();
+    const typingMessage = {
+      type: 'bot',
+      text: '',
+      timestamp: new Date(),
+      isTyping: true,
+      id: typingId
+    };
+    setMessages(prev => [...prev, typingMessage]);
+
     try {
       const response = await fetch(`/api/answer?q=${encodeURIComponent(queryText)}`);
       const data = await response.json();
@@ -48,16 +59,26 @@ export default function Home() {
         throw new Error(data.error || 'Failed to get answer');
       }
 
+      // Remove typing indicator and add real response
+      setMessages(prev => prev.filter(msg => msg.id !== typingId));
+
+      // Add a small delay for more natural feel
+      await new Promise(resolve => setTimeout(resolve, 500));
+
       // Add bot response
       const botMessage = {
         type: 'bot',
         text: data.answer,
         sourceUrl: data.sourceUrl,
         schemeName: data.schemeName,
-        timestamp: new Date()
+        timestamp: new Date(),
+        showFollowUp: true
       };
       setMessages(prev => [...prev, botMessage]);
     } catch (err) {
+      // Remove typing indicator
+      setMessages(prev => prev.filter(msg => msg.id !== typingId));
+      
       const errorMessage = {
         type: 'bot',
         text: `Sorry, I encountered an error: ${err.message}. Please try again.`,
@@ -118,15 +139,24 @@ export default function Home() {
                 key={idx}
                 className={`flex ${msg.type === 'user' ? 'justify-end' : 'justify-start'}`}
               >
-                <div
-                  className={`max-w-[75%] rounded-2xl px-4 py-3 ${
-                    msg.type === 'user'
-                      ? 'bg-groww-primary text-white'
-                      : msg.isError
-                      ? 'bg-red-50 border border-red-200 text-red-800'
-                      : 'bg-white border border-gray-200 text-gray-800'
-                  }`}
-                >
+                {msg.isTyping ? (
+                  <div className="bg-white border border-gray-200 rounded-2xl px-4 py-3">
+                    <div className="flex gap-1.5 items-center">
+                      <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0ms', animationDuration: '1s' }}></div>
+                      <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '200ms', animationDuration: '1s' }}></div>
+                      <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '400ms', animationDuration: '1s' }}></div>
+                    </div>
+                  </div>
+                ) : (
+                  <div
+                    className={`max-w-[75%] rounded-2xl px-4 py-3 ${
+                      msg.type === 'user'
+                        ? 'bg-groww-primary text-white'
+                        : msg.isError
+                        ? 'bg-red-50 border border-red-200 text-red-800'
+                        : 'bg-white border border-gray-200 text-gray-800'
+                    }`}
+                  >
                   <p className="text-sm whitespace-pre-line">{msg.text}</p>
                   {msg.sourceUrl && (
                     <div className="mt-3 pt-3 border-t border-gray-200">
@@ -143,23 +173,38 @@ export default function Home() {
                       </a>
                     </div>
                   )}
+                  {msg.showFollowUp && msg.type === 'bot' && (
+                    <div className="mt-3 pt-3 border-t border-gray-100">
+                      <p className="text-xs text-gray-500 mb-2">💡 Want to know more?</p>
+                      <div className="flex flex-wrap gap-2">
+                        <button
+                          onClick={() => handleSend('What about the portfolio holdings?')}
+                          className="text-xs px-2 py-1 bg-blue-50 text-groww-primary hover:bg-blue-100 rounded-md transition-colors"
+                        >
+                          Portfolio
+                        </button>
+                        <button
+                          onClick={() => handleSend('Tell me about the fees')}
+                          className="text-xs px-2 py-1 bg-blue-50 text-groww-primary hover:bg-blue-100 rounded-md transition-colors"
+                        >
+                          Fees
+                        </button>
+                        <button
+                          onClick={() => handleSend('What about tax implications?')}
+                          className="text-xs px-2 py-1 bg-blue-50 text-groww-primary hover:bg-blue-100 rounded-md transition-colors"
+                        >
+                          Tax Info
+                        </button>
+                      </div>
+                    </div>
+                  )}
                   <p className="text-xs opacity-60 mt-2">
                     {msg.timestamp.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' })}
                   </p>
                 </div>
+                )}
               </div>
             ))}
-            {loading && (
-              <div className="flex justify-start">
-                <div className="bg-white border border-gray-200 rounded-2xl px-4 py-3">
-                  <div className="flex gap-1">
-                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
-                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
-                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
-                  </div>
-                </div>
-              </div>
-            )}
             <div ref={messagesEndRef} />
           </div>
 
