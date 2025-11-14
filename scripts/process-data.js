@@ -4,7 +4,7 @@ const path = require('path');
 const crypto = require('crypto');
 const { stringify } = require('csv-stringify/sync');
 
-// Raw fetched data (this will be populated from the fetch_content results)
+// Raw fetched data - UPDATED 14 Nov 2025 with comprehensive information
 const RAW_DATA = {
   'hdfc-mid-cap-fund-direct-growth': {
     url: 'https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth',
@@ -12,17 +12,20 @@ const RAW_DATA = {
     category: 'Equity Mid Cap',
     risk: 'Very High Risk',
     nav: '224.35',
-    nav_date: '13 Nov 2025',
+    nav_date: '14 Nov 2025',
     min_sip: '100',
     fund_size: '89,383.23 Cr',
     expense_ratio: '0.71',
     rating: '5',
-    returns_1y: '13.3',
-    returns_3y: '26.9',
+    returns_1y: '12.5',
+    returns_3y: '27.0',
     returns_5y: '29.2',
     lock_in: 'No lock-in',
-    exit_load: 'Exit load details from page',
-    benchmark: 'Category benchmark'
+    lock_in_years: 0,
+    exit_load: '1% if redeemed within 1 year from the date of allotment',
+    benchmark: 'Nifty Midcap 150 TRI',
+    total_holdings: '75',
+    top_holdings: 'Max Financial Services Ltd. (4.46%), AU Small Finance Bank Ltd. (3.70%), Indian Bank (3.54%)'
   },
   'hdfc-large-cap-fund-direct-growth': {
     url: 'https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth',
@@ -36,10 +39,14 @@ const RAW_DATA = {
     expense_ratio: '0.97',
     rating: '5',
     returns_1y: '8.2',
-    returns_3y: '16.2',
+    returns_3y: '16.4',
     returns_5y: '20.2',
     lock_in: 'No lock-in',
-    exit_load: 'Exit load details from page'
+    lock_in_years: 0,
+    exit_load: '1% if redeemed within 1 year from the date of allotment',
+    benchmark: 'Nifty 50 TRI',
+    total_holdings: '49',
+    top_holdings: 'HDFC Bank Ltd. (9.49%), ICICI Bank Ltd. (8.80%), Bharti Airtel Ltd. (6.16%)'
   },
   'hdfc-small-cap-fund-direct-growth': {
     url: 'https://groww.in/mutual-funds/hdfc-small-cap-fund-direct-growth',
@@ -50,13 +57,17 @@ const RAW_DATA = {
     nav_date: '14 Nov 2025',
     min_sip: '100',
     fund_size: '38,412.10 Cr',
-    expense_ratio: 'TBD from page',
+    expense_ratio: '0.82',
     rating: '4',
-    returns_1y: '7.3',
-    returns_3y: '23.3',
+    returns_1y: '7.1',
+    returns_3y: '23.2',
     returns_5y: '30.0',
     lock_in: 'No lock-in',
-    exit_load: 'Exit load details from page'
+    lock_in_years: 0,
+    exit_load: '1% if redeemed within 1 year from the date of allotment',
+    benchmark: 'Nifty Smallcap 250 TRI',
+    total_holdings: '82',
+    top_holdings: 'Firstsource Solutions Ltd. (5.09%), eClerx Services Ltd. (4.46%), Aster DM Healthcare Ltd. (4.22%)'
   },
   'hdfc-equity-fund-direct-growth': {
     url: 'https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth',
@@ -69,11 +80,15 @@ const RAW_DATA = {
     fund_size: '91,041.00 Cr',
     expense_ratio: '0.67',
     rating: '5',
-    returns_1y: '13.3',
-    returns_3y: '22.2',
+    returns_1y: '12.9',
+    returns_3y: '22.4',
     returns_5y: '27.4',
     lock_in: 'No lock-in',
-    exit_load: 'Exit load details from page'
+    lock_in_years: 0,
+    exit_load: '1% if redeemed within 1 year from the date of allotment',
+    benchmark: 'Nifty 500 Multicap 50:25:25 TRI',
+    total_holdings: '55',
+    top_holdings: 'ICICI Bank Ltd. (9.01%), HDFC Bank Ltd. (8.57%), Axis Bank Ltd. (7.31%)'
   },
   'hdfc-elss-tax-saver-fund-direct-plan-growth': {
     url: 'https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth',
@@ -86,11 +101,16 @@ const RAW_DATA = {
     fund_size: '17,194.16 Cr',
     expense_ratio: '1.08',
     rating: '5',
-    returns_1y: '11.8',
-    returns_3y: '21.7',
+    returns_1y: '11.6',
+    returns_3y: '21.8',
     returns_5y: '24.8',
-    lock_in: '3 years (ELSS)',
-    exit_load: 'No exit load (lock-in period applies)'
+    lock_in: '3 years (ELSS - mandatory lock-in)',
+    lock_in_years: 3,
+    exit_load: 'No exit load (3 year mandatory lock-in applies)',
+    tax_benefit: 'Tax deduction under Section 80C up to ₹1.5 lakh per financial year',
+    benchmark: 'Nifty 500 TRI',
+    total_holdings: '56',
+    top_holdings: 'HDFC Bank Ltd. (9.53%), ICICI Bank Ltd. (8.61%), Axis Bank Ltd. (8.60%)'
   }
 };
 
