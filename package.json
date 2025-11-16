@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run process-data && npm run build-index && next build",
     "start": "next start",
     "lint": "next lint",
     "ingest": "node scripts/ingest.js",
