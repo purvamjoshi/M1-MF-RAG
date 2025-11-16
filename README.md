@@ -2,7 +2,8 @@
 
 A smart FAQ assistant for Groww mutual funds that answers factual questions about HDFC mutual fund schemes using only official public pages. Built with a RAG (Retrieval-Augmented Generation) architecture using Google Gemini API.
 
-![Chat Interface](https://placehold.co/600x400?text=Chat+Interface+Screenshot) <!-- Replace with actual screenshot -->
+![Chat Interface](<img width="1919" height="908" alt="image" src="https://github.com/user-attachments/assets/fbd34707-8d19-4569-aaf4-94877af83360" />
+) <!-- Replace with actual screenshot -->
 
 ## 🚀 Features
 
