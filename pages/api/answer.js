@@ -56,6 +56,38 @@ export default async function handler(req, res) {
 
   } catch (error) {
     console.error('Answer API error:', error);
+    
+    // If this is a retriever initialization error, try to provide a basic fallback
+    if (error.message && error.message.includes('Retriever initialization failed')) {
+      // Try to provide a basic response with direct extraction
+      try {
+        const gemini = getGeminiClient();
+        // Create a minimal chunk with basic information
+        const fallbackChunk = {
+          content_md: 'Basic mutual fund information',
+          fields_json: {},
+          scheme_display_name: 'HDFC Mutual Funds',
+          source_url: 'https://groww.in/mutual-funds'
+        };
+        
+        // Try to generate answer with minimal context
+        const result = await gemini.generateAnswer(query, [fallbackChunk]);
+        
+        return res.status(200).json({
+          query: query,
+          answer: result.answer || 'I\'m currently experiencing technical issues. Please try again later or check the official Groww website for the most accurate information.',
+          sourceUrl: result.sourceUrl || 'https://groww.in/mutual-funds',
+          schemeName: result.schemeName || 'HDFC Mutual Funds',
+          confidence: 'low',
+          chunksFound: 0,
+          fallback: true,
+          timestamp: new Date().toISOString()
+        });
+      } catch (fallbackError) {
+        console.error('Fallback generation failed:', fallbackError);
+      }
+    }
+    
     return res.status(500).json({ 
       error: 'Failed to generate answer',
       message: error.message 
