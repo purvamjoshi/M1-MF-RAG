@@ -15,8 +15,8 @@
   "dependencies": {
     "@google/generative-ai": "^0.21.0",
     "cheerio": "^1.0.0-rc.12",
+    "chromadb": "^1.8.1",
     "csv-stringify": "^6.4.5",
-    "fuse.js": "^7.0.0",
     "next": "^14.0.4",
     "playwright": "^1.40.1",
     "react": "^18.2.0",
