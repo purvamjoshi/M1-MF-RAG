@@ -1,12 +1,12 @@
 const fs = require('fs').promises;
 const path = require('path');
-const { IndexFlatL2 } = require('faiss-node');
+const { LocalIndex } = require('vectra');
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 
 /**
- * Build vector indexes using FAISS
+ * Build vector indexes using Vectra (pure JavaScript vector database)
  * Creates embeddings using Google's text-embedding-004
- * Stores vectors in FAISS index file for fast similarity search
+ * Stores vectors in local index for fast similarity search - NO DOCKER NEEDED!
  */
 
 async function loadChunks() {
@@ -116,56 +116,69 @@ async function generateEmbeddings(chunks) {
 }
 
 /**
- * Build FAISS vector index from embeddings
+ * Build Vectra vector index from embeddings
  */
 async function buildVectorIndex(chunks, embeddings) {
   try {
-    console.log('\nBuilding FAISS vector index...');
+    console.log('\nBuilding Vectra vector index...');
     
-    // Create FAISS index (L2 distance)
-    const dimension = 768; // text-embedding-004 dimension
-    const index = new IndexFlatL2(dimension);
-    
-    // Prepare vectors for FAISS
-    const vectors = [];
-    const chunkMapping = [];
-    
-    embeddings.forEach((embedding, idx) => {
-      if (!embedding.error && embedding.embedding.length === dimension) {
-        vectors.push(embedding.embedding);
-        chunkMapping.push({
-          chunk_id: chunks[idx].chunk_id,
-          scheme_id: chunks[idx].scheme_id,
-          scheme_name: chunks[idx].scheme_display_name,
-          section_type: chunks[idx].section_type,
-          source_url: chunks[idx].source_url,
-          vector_index: vectors.length - 1
-        });
-      }
-    });
-    
-    // Add vectors to FAISS index
-    if (vectors.length > 0) {
-      index.add(vectors);
-      console.log(`✓ Added ${vectors.length} vectors to FAISS index`);
-    }
-    
-    // Save FAISS index to file
     const indexDir = path.join(__dirname, '..', 'data', 'index');
     await fs.mkdir(indexDir, { recursive: true });
     
-    const indexPath = path.join(indexDir, 'faiss-index.bin');
-    index.write(indexPath);
-    console.log(`✓ Saved FAISS index to: ${indexPath}`);
+    const vectraPath = path.join(indexDir, 'vectra-index');
     
-    // Save chunk mapping
-    const mappingPath = path.join(indexDir, 'faiss-mapping.json');
+    // Create Vectra index
+    const index = new LocalIndex(vectraPath);
+    
+    // Create index if it doesn't exist
+    if (!(await index.isIndexCreated())) {
+      await index.createIndex();
+    }
+    
+    // Add vectors to index
+    let addedCount = 0;
+    const chunkMapping = [];
+    
+    for (let idx = 0; idx < embeddings.length; idx++) {
+      const embedding = embeddings[idx];
+      const chunk = chunks[idx];
+      
+      if (!embedding.error && embedding.embedding && embedding.embedding.length === 768) {
+        // Create item metadata
+        const metadata = {
+          chunk_id: chunk.chunk_id,
+          scheme_id: chunk.scheme_id,
+          scheme_name: chunk.scheme_display_name,
+          section_type: chunk.section_type,
+          source_url: chunk.source_url,
+          content_preview: chunk.content_md.substring(0, 200)
+        };
+        
+        // Add to Vectra index
+        await index.insertItem({
+          vector: embedding.embedding,
+          metadata: metadata
+        });
+        
+        chunkMapping.push(metadata);
+        addedCount++;
+        
+        if (addedCount % 5 === 0) {
+          process.stdout.write(`\rAdded ${addedCount}/${embeddings.length} vectors to index...`);
+        }
+      }
+    }
+    
+    console.log(`\n✓ Added ${addedCount} vectors to Vectra index`);
+    
+    // Save chunk mapping for reference
+    const mappingPath = path.join(indexDir, 'vectra-mapping.json');
     await fs.writeFile(mappingPath, JSON.stringify(chunkMapping, null, 2), 'utf8');
     console.log(`✓ Saved chunk mapping to: ${mappingPath}`);
     
-    return { count: vectors.length, indexPath, mappingPath };
+    return { count: addedCount, indexPath: vectraPath, mappingPath };
   } catch (error) {
-    console.error('Failed to build FAISS index:', error);
+    console.error('Failed to build Vectra index:', error);
     throw error;
   }
 }
@@ -343,13 +356,14 @@ async function main() {
       console.log('\nSaving embeddings backup...');
       await saveEmbeddingsBackup(embeddings, chunks);
 
-      // Build FAISS index
-      console.log('\nBuilding FAISS vector index...');
+      // Build Vectra index
+      console.log('\nBuilding Vectra vector index...');
       const vectorIndexInfo = await buildVectorIndex(chunks, embeddings);
-      console.log(`✓ Built FAISS index with ${vectorIndexInfo.count} vectors`);
+      console.log(`✓ Built Vectra index with ${vectorIndexInfo.count} vectors`);
       console.log('\n✅ Vector index building complete!');
-      console.log(`\nFAISS index: ${vectorIndexInfo.indexPath}`);
+      console.log(`\nVectra index: ${vectorIndexInfo.indexPath}`);
       console.log(`Mapping file: ${vectorIndexInfo.mappingPath}`);
+      console.log('\n🚀 Pure JavaScript vector search - NO DOCKER NEEDED!');
 
     } catch (embeddingError) {
       console.warn('\n⚠️  Vector embedding generation failed:', embeddingError.message);
