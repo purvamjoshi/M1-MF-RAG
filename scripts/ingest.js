@@ -19,11 +19,15 @@ const SECTION_TYPES = {
   FACTS: 'facts_performance',
   PORTFOLIO_HOLDINGS: 'portfolio_holdings',
   PORTFOLIO_SECTORS: 'portfolio_sectors',
+  ADVANCE_RATIOS: 'advance_ratios',
+  FUND_MANAGER: 'fund_manager',
+  OBJECTIVE: 'fund_objective',
   FEES: 'fees',
   RISKOMETER: 'riskometer_benchmark',
   FAQ: 'faq',
   TAX: 'tax_redemption',
   REGULATORY: 'regulatory_links',
+  CONTACT: 'contact_details',
   DOWNLOADS: 'downloads'
 };
 
@@ -114,35 +118,336 @@ function parseSchemePage($, url, schemeId) {
   const schemeName = cleanText($('h1').first().text()) || schemeId;
   const builder = new ChunkBuilder(schemeId, schemeName, url);
 
-  // 1. Extract Facts/Performance
+  console.log(`  Parsing ${schemeName}...`);
+
+  // 1. Extract Fund Objective
+  const objective = extractObjective($, builder);
+  if (objective) {
+    chunks.push(objective);
+    console.log(`    ✓ Objective`);
+  }
+
+  // 2. Extract Fund Manager
+  const manager = extractFundManager($, builder);
+  if (manager) {
+    chunks.push(manager);
+    console.log(`    ✓ Fund Manager`);
+  }
+
+  // 3. Extract Facts/Performance
   const facts = extractFacts($, builder);
-  if (facts) chunks.push(facts);
+  if (facts) {
+    chunks.push(facts);
+    console.log(`    ✓ Facts & Performance`);
+  }
 
-  // 2. Extract Portfolio Holdings
+  // 4. Extract Portfolio Holdings (Top Stocks)
   const holdings = extractPortfolioHoldings($, builder);
-  if (holdings) chunks.push(holdings);
+  if (holdings) {
+    chunks.push(holdings);
+    console.log(`    ✓ Portfolio Holdings (${holdings.fields_json.row_count || 0} stocks)`);
+  }
 
-  // 3. Extract Fees/TER/Exit Load
+  // 5. Extract Sector Allocation
+  const sectors = extractSectorAllocation($, builder);
+  if (sectors) {
+    chunks.push(sectors);
+    console.log(`    ✓ Sector Allocation`);
+  }
+
+  // 6. Extract Advance Ratios
+  const ratios = extractAdvanceRatios($, builder);
+  if (ratios) {
+    chunks.push(ratios);
+    console.log(`    ✓ Advance Ratios`);
+  }
+
+  // 7. Extract Fees/TER/Exit Load
   const fees = extractFees($, builder);
-  if (fees) chunks.push(fees);
+  if (fees) {
+    chunks.push(fees);
+    console.log(`    ✓ Fees & Charges`);
+  }
 
-  // 4. Extract Riskometer/Benchmark
+  // 8. Extract Riskometer/Benchmark
   const risk = extractRiskometer($, builder);
-  if (risk) chunks.push(risk);
+  if (risk) {
+    chunks.push(risk);
+    console.log(`    ✓ Risk & Benchmark`);
+  }
 
-  // 5. Extract FAQs
+  // 9. Extract FAQs
   const faqs = extractFAQs($, builder);
-  chunks.push(...faqs);
+  if (faqs.length > 0) {
+    chunks.push(...faqs);
+    console.log(`    ✓ FAQs (${faqs.length})`);
+  }
 
-  // 6. Extract Tax/Redemption
+  // 10. Extract Tax/Redemption
   const tax = extractTaxRedemption($, builder);
-  if (tax) chunks.push(tax);
+  if (tax) {
+    chunks.push(tax);
+    console.log(`    ✓ Tax & Redemption`);
+  }
 
-  // 7. Extract Regulatory Links
+  // 11. Extract Contact Details
+  const contact = extractContactDetails($, builder);
+  if (contact) {
+    chunks.push(contact);
+    console.log(`    ✓ Contact Details`);
+  }
+
+  // 12. Extract Regulatory Links
   const regulatory = extractRegulatoryLinks($, builder);
-  if (regulatory) chunks.push(regulatory);
+  if (regulatory) {
+    chunks.push(regulatory);
+    console.log(`    ✓ Regulatory Links`);
+  }
 
   return chunks;
+}
+
+function extractObjective($, builder) {
+  let contentMd = '';
+  const fields = {};
+  
+  // Look for "Investment Objective", "Objective", "Fund Objective" sections
+  const objectivePatterns = [
+    'investment objective',
+    'fund objective',
+    'objective',
+    'investment strategy',
+    'fund strategy'
+  ];
+  
+  let foundObjective = null;
+  
+  $('div, p, section, h2, h3').each((i, el) => {
+    const text = $(el).text().toLowerCase();
+    const fullText = cleanText($(el).text());
+    
+    for (const pattern of objectivePatterns) {
+      if (text.includes(pattern) && fullText.length > 50 && fullText.length < 2000) {
+        // Check if this element or next sibling contains the objective text
+        let objectiveText = fullText;
+        
+        // If this is just a header, get the next element's content
+        if (fullText.length < 100) {
+          const next = $(el).next();
+          if (next.length > 0) {
+            objectiveText = cleanText(next.text());
+          }
+        }
+        
+        if (objectiveText.length > 50 && !foundObjective) {
+          foundObjective = objectiveText;
+          fields.objective_text = objectiveText;
+          contentMd = `## Investment Objective\n\n${objectiveText}\n`;
+          return false; // break
+        }
+      }
+    }
+  });
+  
+  if (!foundObjective) return null;
+  
+  return builder.addChunk(SECTION_TYPES.OBJECTIVE, contentMd, fields);
+}
+
+function extractFundManager($, builder) {
+  let contentMd = '';
+  const fields = {};
+  
+  // Look for fund manager information
+  let managerName = null;
+  let managerInfo = null;
+  
+  $('div, p, span, td, th').each((i, el) => {
+    const text = $(el).text();
+    const lowerText = text.toLowerCase();
+    
+    // Look for "Fund Manager:", "Manager:", "Managed by"
+    if ((lowerText.includes('fund manager') || lowerText.includes('managed by')) && !managerName) {
+      const cleanedText = cleanText(text);
+      
+      // Try to extract name after the label
+      const nameMatch = cleanedText.match(/(?:fund manager|managed by)[:\s]+([A-Z][a-z]+(?:\s+[A-Z][a-z]+)*)/i);
+      if (nameMatch && nameMatch[1].length > 3) {
+        managerName = nameMatch[1].trim();
+        fields.manager_name = managerName;
+      } else {
+        // Check next sibling or child
+        const nextEl = $(el).next();
+        if (nextEl.length > 0) {
+          const nextText = cleanText(nextEl.text());
+          if (nextText.length > 3 && nextText.length < 100 && /^[A-Z]/.test(nextText)) {
+            managerName = nextText;
+            fields.manager_name = managerName;
+          }
+        }
+      }
+    }
+    
+    // Look for manager experience, bio
+    if (managerName && lowerText.includes('experience') && text.length > 30) {
+      managerInfo = cleanText(text);
+      fields.manager_experience = managerInfo;
+    }
+  });
+  
+  if (!managerName && !managerInfo) return null;
+  
+  contentMd = `## Fund Manager\n\n`;
+  if (managerName) {
+    contentMd += `**Name**: ${managerName}\n\n`;
+  }
+  if (managerInfo) {
+    contentMd += `${managerInfo}\n`;
+  }
+  
+  return builder.addChunk(SECTION_TYPES.FUND_MANAGER, contentMd, fields);
+}
+
+function extractSectorAllocation($, builder) {
+  const tables = $('table');
+  let sectorTable = null;
+  
+  // Find sector allocation table
+  tables.each((i, table) => {
+    const tableText = $(table).text().toLowerCase();
+    const headerText = $(table).find('th, thead td').text().toLowerCase();
+    
+    if (headerText.includes('sector') || tableText.includes('sector allocation') || 
+        headerText.includes('asset allocation') || headerText.includes('equity sector')) {
+      sectorTable = table;
+      return false;
+    }
+  });
+  
+  if (!sectorTable) return null;
+  
+  const headers = [];
+  const rows = [];
+  
+  $(sectorTable).find('thead tr th, thead tr td').each((i, th) => {
+    headers.push(cleanText($(th).text()));
+  });
+  
+  $(sectorTable).find('tbody tr').each((i, tr) => {
+    const row = [];
+    $(tr).find('td').each((j, td) => {
+      row.push(cleanText($(td).text()));
+    });
+    if (row.length > 0) rows.push(row);
+  });
+  
+  if (rows.length === 0) return null;
+  
+  const csvData = stringify([headers, ...rows]);
+  let contentMd = `## Sector Allocation\n\n`;
+  contentMd += `| ${headers.join(' | ')} |\n`;
+  contentMd += `| ${headers.map(() => '---').join(' | ')} |\n`;
+  rows.forEach(row => {
+    contentMd += `| ${row.join(' | ')} |\n`;
+  });
+  
+  return builder.addChunk(
+    SECTION_TYPES.PORTFOLIO_SECTORS,
+    contentMd,
+    { table_headers: headers, row_count: rows.length },
+    csvData
+  );
+}
+
+function extractAdvanceRatios($, builder) {
+  let contentMd = '## Advance Ratios\n\n';
+  const fields = {};
+  let found = false;
+  
+  // Look for various ratios
+  const ratioPatterns = [
+    { key: 'pe_ratio', label: 'P/E Ratio', pattern: /(?:p\/e|pe)\s*ratio[:\s]+([\.\d]+)/i },
+    { key: 'pb_ratio', label: 'P/B Ratio', pattern: /(?:p\/b|pb)\s*ratio[:\s]+([\.\d]+)/i },
+    { key: 'dividend_yield', label: 'Dividend Yield', pattern: /dividend\s*yield[:\s]+([\.\d]+)%?/i },
+    { key: 'sharpe_ratio', label: 'Sharpe Ratio', pattern: /sharpe\s*ratio[:\s]+([\.\d]+)/i },
+    { key: 'alpha', label: 'Alpha', pattern: /alpha[:\s]+([-\d.]+)/i },
+    { key: 'beta', label: 'Beta', pattern: /beta[:\s]+([\.\d]+)/i },
+    { key: 'standard_deviation', label: 'Standard Deviation', pattern: /standard\s*deviation[:\s]+([\.\d]+)%?/i },
+    { key: 'turnover_ratio', label: 'Turnover Ratio', pattern: /turnover\s*ratio[:\s]+([\.\d]+)%?/i }
+  ];
+  
+  $('div, p, td, span').each((i, el) => {
+    const text = $(el).text();
+    const lowerText = text.toLowerCase();
+    
+    for (const { key, label, pattern } of ratioPatterns) {
+      if (!fields[key]) {
+        const match = text.match(pattern);
+        if (match) {
+          const value = parseFloat(match[1]);
+          if (!isNaN(value)) {
+            fields[key] = value;
+            contentMd += `- **${label}**: ${value}\n`;
+            found = true;
+          }
+        }
+      }
+    }
+  });
+  
+  if (!found) return null;
+  
+  return builder.addChunk(SECTION_TYPES.ADVANCE_RATIOS, contentMd, fields);
+}
+
+function extractContactDetails($, builder) {
+  let contentMd = '## Contact Details\n\n';
+  const fields = {};
+  let found = false;
+  
+  // Look for contact information
+  $('div, p, section').each((i, el) => {
+    const text = $(el).text();
+    const lowerText = text.toLowerCase();
+    
+    // Email
+    const emailMatch = text.match(/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/i);
+    if (emailMatch && !fields.email) {
+      fields.email = emailMatch[1];
+      contentMd += `- **Email**: ${emailMatch[1]}\n`;
+      found = true;
+    }
+    
+    // Phone
+    const phoneMatch = text.match(/(?:phone|call|tel|contact)[:\s]*(\+?[\d\s()-]{10,20})/i);
+    if (phoneMatch && !fields.phone) {
+      fields.phone = cleanText(phoneMatch[1]);
+      contentMd += `- **Phone**: ${fields.phone}\n`;
+      found = true;
+    }
+    
+    // Website
+    if (lowerText.includes('website') && text.includes('http')) {
+      const urlMatch = text.match(/(https?:\/\/[^\s]+)/i);
+      if (urlMatch && !fields.website) {
+        fields.website = urlMatch[1];
+        contentMd += `- **Website**: ${urlMatch[1]}\n`;
+        found = true;
+      }
+    }
+    
+    // Customer care/support
+    if ((lowerText.includes('customer care') || lowerText.includes('customer support')) && 
+        text.length > 20 && text.length < 500) {
+      fields.customer_care = cleanText(text);
+      contentMd += `\n${cleanText(text)}\n`;
+      found = true;
+    }
+  });
+  
+  if (!found) return null;
+  
+  return builder.addChunk(SECTION_TYPES.CONTACT, contentMd, fields);
 }
 
 function extractFacts($, builder) {
@@ -207,39 +512,87 @@ function extractFacts($, builder) {
 function extractPortfolioHoldings($, builder) {
   const tables = $('table');
   let holdingsTable = null;
+  let maxRelevance = 0;
 
+  // Find the most relevant holdings table
   tables.each((i, table) => {
+    const tableText = $(table).text().toLowerCase();
     const headerText = $(table).find('th, thead td').text().toLowerCase();
-    if (headerText.includes('holding') || headerText.includes('company') || headerText.includes('stock')) {
+    let relevance = 0;
+    
+    // Score based on keywords
+    if (headerText.includes('holding')) relevance += 10;
+    if (headerText.includes('company') || headerText.includes('name')) relevance += 5;
+    if (headerText.includes('stock')) relevance += 5;
+    if (headerText.includes('sector')) relevance += 3;
+    if (headerText.includes('asset') || headerText.includes('%')) relevance += 3;
+    if (tableText.includes('equity')) relevance += 2;
+    
+    // Check if table has multiple rows (actual holdings data)
+    const rowCount = $(table).find('tbody tr').length;
+    if (rowCount > 2) relevance += rowCount;
+    
+    if (relevance > maxRelevance) {
+      maxRelevance = relevance;
       holdingsTable = table;
-      return false;
     }
   });
 
-  if (!holdingsTable) return null;
+  if (!holdingsTable || maxRelevance < 5) return null;
 
   const headers = [];
   const rows = [];
   
+  // Extract headers
   $(holdingsTable).find('thead tr th, thead tr td').each((i, th) => {
-    headers.push(cleanText($(th).text()));
+    const headerText = cleanText($(th).text());
+    if (headerText) headers.push(headerText);
   });
+  
+  // If no thead, try first row
+  if (headers.length === 0) {
+    $(holdingsTable).find('tr').first().find('td, th').each((i, cell) => {
+      const headerText = cleanText($(cell).text());
+      if (headerText) headers.push(headerText);
+    });
+  }
 
+  // Extract data rows
   $(holdingsTable).find('tbody tr').each((i, tr) => {
     const row = [];
     $(tr).find('td').each((j, td) => {
       row.push(cleanText($(td).text()));
     });
-    if (row.length > 0) rows.push(row);
+    if (row.length > 0 && row.some(cell => cell.length > 0)) {
+      rows.push(row);
+    }
   });
+  
+  // If no tbody, try all rows except first (which might be header)
+  if (rows.length === 0) {
+    $(holdingsTable).find('tr').slice(1).each((i, tr) => {
+      const row = [];
+      $(tr).find('td').each((j, td) => {
+        row.push(cleanText($(td).text()));
+      });
+      if (row.length > 0 && row.some(cell => cell.length > 0)) {
+        rows.push(row);
+      }
+    });
+  }
 
   if (rows.length === 0) return null;
 
   const csvData = stringify([headers, ...rows]);
   let contentMd = `## Top Holdings\n\n`;
-  contentMd += `| ${headers.join(' | ')} |\n`;
-  contentMd += `| ${headers.map(() => '---').join(' | ')} |\n`;
-  rows.slice(0, 10).forEach(row => {
+  
+  if (headers.length > 0) {
+    contentMd += `| ${headers.join(' | ')} |\n`;
+    contentMd += `| ${headers.map(() => '---').join(' | ')} |\n`;
+  }
+  
+  // Include more holdings (up to 15 instead of 10)
+  rows.slice(0, 15).forEach(row => {
     contentMd += `| ${row.join(' | ')} |\n`;
   });
 
@@ -511,10 +864,15 @@ async function saveChunks(allChunks) {
   await fs.mkdir(metaDir, { recursive: true });
 
   // Save JSONL
-  const jsonlPath = path.join(jsonlDir, `ingest-${today}.jsonl`);
+  const jsonlPath = path.join(jsonlDir, `ingest-full-${today}.jsonl`);
   const jsonlContent = allChunks.map(c => JSON.stringify(c)).join('\n');
   await fs.writeFile(jsonlPath, jsonlContent, 'utf8');
   console.log(`Saved JSONL: ${jsonlPath}`);
+  
+  // Also save as ingest-latest for build-index to use
+  const latestPath = path.join(jsonlDir, `ingest-${today}.jsonl`);
+  await fs.writeFile(latestPath, jsonlContent, 'utf8');
+  console.log(`Saved latest: ${latestPath}`);
 
   // Save individual chunks
   for (const chunk of allChunks) {
