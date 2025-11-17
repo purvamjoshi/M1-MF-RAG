@@ -1,12 +1,12 @@
 const fs = require('fs').promises;
 const path = require('path');
-const { ChromaClient } = require('chromadb');
+const { IndexFlatL2 } = require('faiss-node');
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 
 /**
- * Build vector indexes using Chroma DB
+ * Build vector indexes using FAISS
  * Creates embeddings using Google's text-embedding-004
- * Stores vectors in Chroma for semantic search
+ * Stores vectors in FAISS index file for fast similarity search
  */
 
 async function loadChunks() {
@@ -116,69 +116,56 @@ async function generateEmbeddings(chunks) {
 }
 
 /**
- * Build vector index using Chroma DB
+ * Build FAISS vector index from embeddings
  */
 async function buildVectorIndex(chunks, embeddings) {
   try {
-    const chromaUrl = process.env.CHROMA_URL || 'http://localhost:8000';
-    console.log(`\nConnecting to Chroma DB at: ${chromaUrl}`);
+    console.log('\nBuilding FAISS vector index...');
     
-    const client = new ChromaClient({ path: chromaUrl });
-    const collectionName = process.env.CHROMA_COLLECTION || 'groww-hdfc';
+    // Create FAISS index (L2 distance)
+    const dimension = 768; // text-embedding-004 dimension
+    const index = new IndexFlatL2(dimension);
     
-    // Delete existing collection if it exists
-    try {
-      await client.deleteCollection({ name: collectionName });
-      console.log(`Deleted existing collection: ${collectionName}`);
-    } catch (error) {
-      // Collection doesn't exist, that's fine
-    }
+    // Prepare vectors for FAISS
+    const vectors = [];
+    const chunkMapping = [];
     
-    // Create new collection
-    const collection = await client.createCollection({ name: collectionName });
-    console.log(`Created collection: ${collectionName}`);
-    
-    // Prepare data for upsert
-    const ids = [];
-    const embeddingVectors = [];
-    const metadatas = [];
-    const documents = [];
-    
-    chunks.forEach((chunk, idx) => {
-      const embedding = embeddings[idx];
-      
-      ids.push(chunk.chunk_id);
-      embeddingVectors.push(embedding.embedding);
-      documents.push(prepareTextForEmbedding(chunk));
-      metadatas.push({
-        scheme_id: chunk.scheme_id,
-        scheme_name: chunk.scheme_display_name,
-        section_type: chunk.section_type,
-        source_url: chunk.source_url,
-        hash: chunk.hash,
-        fetched_at: chunk.fetched_at
-      });
+    embeddings.forEach((embedding, idx) => {
+      if (!embedding.error && embedding.embedding.length === dimension) {
+        vectors.push(embedding.embedding);
+        chunkMapping.push({
+          chunk_id: chunks[idx].chunk_id,
+          scheme_id: chunks[idx].scheme_id,
+          scheme_name: chunks[idx].scheme_display_name,
+          section_type: chunks[idx].section_type,
+          source_url: chunks[idx].source_url,
+          vector_index: vectors.length - 1
+        });
+      }
     });
     
-    // Upsert to Chroma in batches
-    const batchSize = 100;
-    for (let i = 0; i < ids.length; i += batchSize) {
-      const end = Math.min(i + batchSize, ids.length);
-      
-      await collection.add({
-        ids: ids.slice(i, end),
-        embeddings: embeddingVectors.slice(i, end),
-        metadatas: metadatas.slice(i, end),
-        documents: documents.slice(i, end)
-      });
-      
-      console.log(`Upserted ${end}/${ids.length} vectors to Chroma`);
+    // Add vectors to FAISS index
+    if (vectors.length > 0) {
+      index.add(vectors);
+      console.log(`✓ Added ${vectors.length} vectors to FAISS index`);
     }
     
-    console.log('✓ Vector index built in Chroma DB');
-    return { collection: collectionName, count: ids.length };
+    // Save FAISS index to file
+    const indexDir = path.join(__dirname, '..', 'data', 'index');
+    await fs.mkdir(indexDir, { recursive: true });
+    
+    const indexPath = path.join(indexDir, 'faiss-index.bin');
+    index.write(indexPath);
+    console.log(`✓ Saved FAISS index to: ${indexPath}`);
+    
+    // Save chunk mapping
+    const mappingPath = path.join(indexDir, 'faiss-mapping.json');
+    await fs.writeFile(mappingPath, JSON.stringify(chunkMapping, null, 2), 'utf8');
+    console.log(`✓ Saved chunk mapping to: ${mappingPath}`);
+    
+    return { count: vectors.length, indexPath, mappingPath };
   } catch (error) {
-    console.error('Failed to build vector index in Chroma:', error);
+    console.error('Failed to build FAISS index:', error);
     throw error;
   }
 }
@@ -331,11 +318,10 @@ async function main() {
     console.log(`✓ Metadata index: ${paths.metadataPath}`);
     console.log(`✓ Chunk lookup: ${paths.lookupPath}`);
 
-    // Try to build vector embeddings (optional - will skip if ChromaDB unavailable)
+    // Try to build vector embeddings (optional - will skip if API key unavailable)
     console.log('\n🔮 Attempting vector embedding generation...');
     
     const apiKey = process.env.GEMINI_API_KEY;
-    const chromaUrl = process.env.CHROMA_URL;
     
     if (!apiKey) {
       console.warn('\n⚠️  GEMINI_API_KEY not set - skipping vector embeddings');
@@ -343,9 +329,7 @@ async function main() {
       console.log('\n✅ Basic index building complete!');
       console.log('\nTo enable vector search later:');
       console.log('1. Set GEMINI_API_KEY in environment');
-      console.log('2. Deploy ChromaDB on Railway');
-      console.log('3. Set CHROMA_URL to point to your ChromaDB instance');
-      console.log('4. Run: npm run build-index');
+      console.log('2. Run: npm run build-index');
       return;
     }
 
@@ -359,23 +343,13 @@ async function main() {
       console.log('\nSaving embeddings backup...');
       await saveEmbeddingsBackup(embeddings, chunks);
 
-      // Try to upload to ChromaDB
-      if (chromaUrl) {
-        console.log('\nBuilding vector index in Chroma DB...');
-        try {
-          const vectorIndexInfo = await buildVectorIndex(chunks, embeddings);
-          console.log(`✓ Stored ${vectorIndexInfo.count} vectors in collection: ${vectorIndexInfo.collection}`);
-          console.log('\n✅ Vector index building complete!');
-          console.log(`\nChroma DB Collection: ${vectorIndexInfo.collection}`);
-          console.log(`Total vectors: ${vectorIndexInfo.count}`);
-        } catch (chromaError) {
-          console.warn('\n⚠️  ChromaDB upload failed:', chromaError.message);
-          console.log('📋 Embeddings saved locally. Upload to ChromaDB manually or set up ChromaDB and retry.');
-        }
-      } else {
-        console.warn('\n⚠️  CHROMA_URL not set - embeddings generated but not uploaded');
-        console.log('📋 To upload embeddings, set CHROMA_URL and run build-index again');
-      }
+      // Build FAISS index
+      console.log('\nBuilding FAISS vector index...');
+      const vectorIndexInfo = await buildVectorIndex(chunks, embeddings);
+      console.log(`✓ Built FAISS index with ${vectorIndexInfo.count} vectors`);
+      console.log('\n✅ Vector index building complete!');
+      console.log(`\nFAISS index: ${vectorIndexInfo.indexPath}`);
+      console.log(`Mapping file: ${vectorIndexInfo.mappingPath}`);
 
     } catch (embeddingError) {
       console.warn('\n⚠️  Vector embedding generation failed:', embeddingError.message);
@@ -386,7 +360,7 @@ async function main() {
     console.log(`\nLocal indexes saved to data/index/`);
     console.log(`\nNext steps:`);
     console.log(`1. Start your app: npm run dev`);
-    console.log(`2. For vector search: Deploy ChromaDB on Railway and set CHROMA_URL`);
+    console.log(`2. Test vector search with your queries!`);
 
   } catch (error) {
     console.error('❌ Index building failed:', error);
