@@ -260,7 +260,9 @@ function extractFundManager($, builder) {
   
   // Look for fund manager information
   let managerName = null;
-  let managerInfo = null;
+  let managerEducation = null;
+  let managerExperience = null;
+  let otherSchemes = [];
   
   $('div, p, span, td, th').each((i, el) => {
     const text = $(el).text();
@@ -288,21 +290,70 @@ function extractFundManager($, builder) {
       }
     }
     
-    // Look for manager experience, bio
-    if (managerName && lowerText.includes('experience') && text.length > 30) {
-      managerInfo = cleanText(text);
-      fields.manager_experience = managerInfo;
+    // Look for education (B.Com, CA, CFA, MBA, etc.)
+    if (!managerEducation && (lowerText.includes('education') || lowerText.match(/b\.com|ca|cfa|mba|m\.com/i))) {
+      const fullText = cleanText(text);
+      // Check if text has education keywords
+      if (fullText.match(/education|b\.com|ca|cfa|mba|m\.com/i) && fullText.length < 300) {
+        // Extract just the education part
+        const eduMatch = fullText.match(/education[:\s]*([^.]+)/i) || fullText.match(/((?:Mr\.|Ms\.|Dr\.)?\s*\w+\s+has\s+done\s+[^.]+)/i);
+        if (eduMatch) {
+          managerEducation = eduMatch[1] || eduMatch[0];
+          managerEducation = managerEducation.replace(/education/gi, '').trim();
+        } else if (fullText.match(/b\.com|ca|cfa|mba|m\.com/i)) {
+          managerEducation = fullText;
+        }
+      }
+    }
+    
+    // Look for manager experience
+    if (!managerExperience && lowerText.includes('experience') && text.length > 30 && text.length < 500) {
+      const fullText = cleanText(text);
+      const expMatch = fullText.match(/experience[:\s]*([^.]+(?:\.[^.]{0,100})?)/i) || fullText.match(/((?:prior to|before)\s+joining[^.]+(?:\.[^.]{0,100})?)/i);
+      if (expMatch) {
+        managerExperience = expMatch[1] || expMatch[0];
+        managerExperience = managerExperience.replace(/experience/gi, '').trim();
+      } else if (fullText.match(/prior to|before joining|worked with/i)) {
+        managerExperience = fullText;
+      }
+    }
+    
+    // Look for "Also manages these schemes"
+    if (lowerText.includes('also manages') || (lowerText.includes('schemes') && lowerText.includes('manage'))) {
+      const fullText = cleanText(text);
+      // Extract scheme names that follow
+      const schemePattern = /HDFC [A-Z][\w\s]+(?:Fund|Growth)/g;
+      const schemes = fullText.match(schemePattern);
+      if (schemes && schemes.length > 0) {
+        otherSchemes = schemes.slice(0, 10); // Limit to 10 schemes
+      }
     }
   });
   
-  if (!managerName && !managerInfo) return null;
+  if (!managerName && !managerEducation && !managerExperience) return null;
   
   contentMd = `## Fund Manager\n\n`;
+  
   if (managerName) {
     contentMd += `**Name**: ${managerName}\n\n`;
   }
-  if (managerInfo) {
-    contentMd += `${managerInfo}\n`;
+  
+  if (managerEducation) {
+    contentMd += `**Education**: ${managerEducation}\n\n`;
+    fields.manager_education = managerEducation;
+  }
+  
+  if (managerExperience) {
+    contentMd += `**Experience**: ${managerExperience}\n\n`;
+    fields.manager_experience = managerExperience;
+  }
+  
+  if (otherSchemes.length > 0) {
+    contentMd += `**Also manages**:\n`;
+    otherSchemes.forEach(scheme => {
+      contentMd += `- ${scheme}\n`;
+    });
+    fields.other_schemes_count = otherSchemes.length;
   }
   
   return builder.addChunk(SECTION_TYPES.FUND_MANAGER, contentMd, fields);

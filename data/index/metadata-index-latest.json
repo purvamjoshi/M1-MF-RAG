@@ -210,8 +210,23 @@
         "hdfc-taxsaver-fund-direct-growth__fund_manager"
       ]
     },
+    "manager_education": {
+      "Trade in Futures & OptionsTrade in F&O using the terminal. View charts, indicators, track your orders , P&L and watchlists in a single space": [
+        "hdfc-mid-cap-fund-direct-growth__fund_manager",
+        "hdfc-large-cap-fund-direct-growth__fund_manager",
+        "hdfc-small-cap-fund-direct-growth__fund_manager",
+        "hdfc-flexi-cap-fund-direct-growth__fund_manager",
+        "hdfc-taxsaver-fund-direct-growth__fund_manager"
+      ]
+    },
     "manager_experience": {
-      "EducationMr. Dhruv has done B.Com, CA and CFAExperiencePrior to joining HDFC MF,he has worked with Motilal Oswal Financial Services Ltd., Goldman Sachs, CRISIL Global Research & Analytics and Deloitte Haskins & SellsAlso manages these schemesHDFC Value Fund Direct Plan GrowthHDFC Low Duration Fund Direct GrowthHDFC Focused Fund Direct GrowthHDFC Flexi Cap Direct Plan GrowthHDFC Floating Rate Debt Fund Direct Plan GrowthHDFC Corporate Bond Fund Direct Plan GrowthHDFC Mid Cap Fund Direct GrowthHDFC Short Term Debt Fund Direct Plan GrowthHDFC Large Cap Fund Direct GrowthHDFC ELSS Tax Saver Fund Direct Plan GrowthHDFC Children's Fund Direct PlanHDFC Income Fund Direct GrowthHDFC Dynamic Debt Fund Direct Plan GrowthHDFC Money Market Fund Direct GrowthHDFC Hybrid Debt Fund Direct GrowthHDFC Credit Risk Debt Fund Direct GrowthHDFC Banking and PSU Debt Fund Direct GrowthHDFC Large and Mid Cap Fund Direct GrowthHDFC Small Cap Fund Direct GrowthHDFC Housing Opportunities Fund Direct GrowthHDFC Ultra Short Term Fund Direct GrowthHDFC Banking & Financial Services Fund Direct GrowthHDFC Business Cycle Fund Direct GrowthHDFC Long Duration Debt Fund Direct GrowthHDFC MNC Fund Direct GrowthHDFC Non Cyclical Consumer Fund Direct GrowthHDFC Transportation and Logistics Fund Direct GrowthHDFC Technology Fund Direct GrowthHDFC Pharma And Healthcare Fund Direct GrowthHDFC Manufacturing Fund Direct GrowthHDFC Innovation Fund Direct GrowthHDFC Diversified Equity All Cap Active FoF Direct Growth": [
+      "Prior to joining HDFC AMC he has worked with New Vernon Advisory Services Ltd., HDFC AMC and ING Barings N": [
+        "hdfc-mid-cap-fund-direct-growth__fund_manager",
+        "hdfc-small-cap-fund-direct-growth__fund_manager"
+      ]
+    },
+    "other_schemes_count": {
+      "3": [
         "hdfc-mid-cap-fund-direct-growth__fund_manager",
         "hdfc-large-cap-fund-direct-growth__fund_manager",
         "hdfc-small-cap-fund-direct-growth__fund_manager"
