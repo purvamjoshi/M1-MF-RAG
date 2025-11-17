@@ -308,58 +308,91 @@ async function saveIndexes(metadataIndex, chunkLookup) {
 }
 
 async function main() {
-  console.log('Building vector indexes with Chroma DB...\n');
+  console.log('Building indexes for mutual fund data...\n');
 
   try {
     // Load chunks
     const chunks = await loadChunks();
 
-    // Generate embeddings
-    console.log('\nGenerating vector embeddings...');
-    const embeddings = await generateEmbeddings(chunks);
-    console.log(`✓ Generated ${embeddings.length} embeddings`);
-
-    // Build vector index in Chroma
-    console.log('\nBuilding vector index in Chroma DB...');
-    const vectorIndexInfo = await buildVectorIndex(chunks, embeddings);
-    console.log(`✓ Stored ${vectorIndexInfo.count} vectors in collection: ${vectorIndexInfo.collection}`);
-
-    // Save embeddings as backup
-    console.log('\nSaving embeddings backup...');
-    await saveEmbeddingsBackup(embeddings, chunks);
-
-    // Build metadata index
+    // Build metadata index (always required)
     console.log('\nBuilding metadata index...');
     const metadataIndex = buildMetadataIndex(chunks);
     console.log(`✓ Schemes: ${metadataIndex.all_schemes.length}`);
     console.log(`✓ Section types: ${metadataIndex.all_sections.length}`);
 
-    // Build chunk lookup
+    // Build chunk lookup (always required)
     console.log('\nBuilding chunk lookup table...');
     const chunkLookup = buildChunkLookup(chunks);
     console.log(`✓ ${Object.keys(chunkLookup).length} chunks indexed`);
 
-    // Save indexes
+    // Save metadata indexes (required for both vector and direct lookup modes)
     console.log('\nSaving metadata indexes...');
     const paths = await saveIndexes(metadataIndex, chunkLookup);
+    console.log(`✓ Metadata index: ${paths.metadataPath}`);
+    console.log(`✓ Chunk lookup: ${paths.lookupPath}`);
 
-    console.log('\n✅ Vector index building complete!');
-    console.log(`\nChroma DB Collection: ${vectorIndexInfo.collection}`);
-    console.log(`Total vectors: ${vectorIndexInfo.count}`);
+    // Try to build vector embeddings (optional - will skip if ChromaDB unavailable)
+    console.log('\n🔮 Attempting vector embedding generation...');
+    
+    const apiKey = process.env.GEMINI_API_KEY;
+    const chromaUrl = process.env.CHROMA_URL;
+    
+    if (!apiKey) {
+      console.warn('\n⚠️  GEMINI_API_KEY not set - skipping vector embeddings');
+      console.log('📋 App will use direct lookup mode (answers will still work!)');
+      console.log('\n✅ Basic index building complete!');
+      console.log('\nTo enable vector search later:');
+      console.log('1. Set GEMINI_API_KEY in environment');
+      console.log('2. Deploy ChromaDB on Railway');
+      console.log('3. Set CHROMA_URL to point to your ChromaDB instance');
+      console.log('4. Run: npm run build-index');
+      return;
+    }
+
+    try {
+      // Generate embeddings
+      console.log('\nGenerating vector embeddings...');
+      const embeddings = await generateEmbeddings(chunks);
+      console.log(`✓ Generated ${embeddings.length} embeddings`);
+
+      // Save embeddings as backup
+      console.log('\nSaving embeddings backup...');
+      await saveEmbeddingsBackup(embeddings, chunks);
+
+      // Try to upload to ChromaDB
+      if (chromaUrl) {
+        console.log('\nBuilding vector index in Chroma DB...');
+        try {
+          const vectorIndexInfo = await buildVectorIndex(chunks, embeddings);
+          console.log(`✓ Stored ${vectorIndexInfo.count} vectors in collection: ${vectorIndexInfo.collection}`);
+          console.log('\n✅ Vector index building complete!');
+          console.log(`\nChroma DB Collection: ${vectorIndexInfo.collection}`);
+          console.log(`Total vectors: ${vectorIndexInfo.count}`);
+        } catch (chromaError) {
+          console.warn('\n⚠️  ChromaDB upload failed:', chromaError.message);
+          console.log('📋 Embeddings saved locally. Upload to ChromaDB manually or set up ChromaDB and retry.');
+        }
+      } else {
+        console.warn('\n⚠️  CHROMA_URL not set - embeddings generated but not uploaded');
+        console.log('📋 To upload embeddings, set CHROMA_URL and run build-index again');
+      }
+
+    } catch (embeddingError) {
+      console.warn('\n⚠️  Vector embedding generation failed:', embeddingError.message);
+      console.log('📋 App will use direct lookup mode (answers will still work!)');
+    }
+
+    console.log('\n✅ Index building complete!');
     console.log(`\nLocal indexes saved to data/index/`);
-    console.log(`- Metadata index: ${paths.metadataPath}`);
-    console.log(`- Chunk lookup: ${paths.lookupPath}`);
     console.log(`\nNext steps:`);
-    console.log(`1. Make sure Chroma DB is running at: ${process.env.CHROMA_URL || 'http://localhost:8000'}`);
-    console.log(`2. Update .env with CHROMA_URL and CHROMA_COLLECTION`);
-    console.log(`3. Test the retrieval system`);
+    console.log(`1. Start your app: npm run dev`);
+    console.log(`2. For vector search: Deploy ChromaDB on Railway and set CHROMA_URL`);
 
   } catch (error) {
     console.error('❌ Index building failed:', error);
     console.error('\nTroubleshooting:');
-    console.error('- Ensure GEMINI_API_KEY is set in environment');
-    console.error('- Check if Chroma DB is running (docker run -p 8000:8000 chromadb/chroma)');
-    console.error('- Verify network connectivity');
+    console.error('- Ensure you ran: npm run process-data');
+    console.error('- Check that data/jsonl/ directory exists with JSONL files');
     process.exit(1);
   }
 }
