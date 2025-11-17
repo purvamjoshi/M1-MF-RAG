@@ -1,14 +1,15 @@
 # Groww Mutual Fund FAQ Assistant
 
-A smart FAQ assistant for Groww mutual funds that answers factual questions about HDFC mutual fund schemes using RAG (Retrieval-Augmented Generation) with vector search. Built with Chroma DB for semantic search and Google Gemini API for answer generation.
+A smart FAQ assistant for Groww mutual funds that answers factual questions about HDFC mutual fund schemes using RAG (Retrieval-Augmented Generation) with vector search. Built with **Vectra** (pure JavaScript vector database) and **Google Gemini API** for answer generation - **NO DOCKER NEEDED!**
 
 ![Chat Interface](<img width="1919" height="908" alt="image" src="https://github.com/user-attachments/assets/fbd34707-8d19-4569-aaf4-94877af83360" />
 ) <!-- Replace with actual screenshot -->
 
 ## 🚀 Features
 
-- **Vector-Based Search**: Uses ChromaDB with text-embedding-004 for semantic similarity search
+- **Vector-Based Search**: Uses Vectra with text-embedding-004 for semantic similarity search (pure JavaScript, no Docker required)
 - **Accurate Answers**: Provides factual information from official Groww pages with single-source citations
+- **Comprehensive Data**: Portfolio holdings, fund manager info, sector allocation, advance ratios, contact details, and more
 - **Conversational UI**: WhatsApp/ChatGPT-style chat interface with typing indicators and follow-up suggestions
 - **Smart Retrieval**: Combines vector embeddings with metadata filtering for precise information retrieval
 - **Fallback Support**: Gracefully handles API rate limits with direct fact extraction
@@ -23,11 +24,12 @@ A smart FAQ assistant for Groww mutual funds that answers factual questions abou
 - **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework
 
 ### AI & Search
-- **[Google Gemini API](https://ai.google.dev/)** - LLM for answer generation (gemini-2.0-flash-exp)
-- **[Google Text Embeddings](https://ai.google.dev/)** - text-embedding-004 for vector embeddings
-- **[ChromaDB](https://www.trychroma.com/)** - Vector database for semantic search
+- **[Google Gemini API](https://ai.google.dev/)** - LLM for answer generation (gemini-1.5-flash-latest)
+- **[Google Text Embeddings](https://ai.google.dev/)** - text-embedding-004 for vector embeddings (768 dimensions)
+- **[Vectra](https://github.com/Stevenic/vectra)** - Pure JavaScript local vector database (NO Docker required)
 
 ### Data Processing
+- **[Playwright](https://playwright.dev/)** - Headless browser automation for web scraping
 - **[Cheerio](https://cheerio.js.org/)** - Server-side jQuery for HTML parsing
 - **[csv-stringify](https://csv.js.org/stringify/)** - CSV generation utilities
 
@@ -52,33 +54,33 @@ A smart FAQ assistant for Groww mutual funds that answers factual questions abou
                               │
                               ▼
                        ┌─────────────────┐    ┌─────────────────┐
-                       │   Chroma DB     │────│  Vector Search  │
-                       │  (Vectors +     │    │  + Metadata     │
+                       │   Vectra Index  │────│  Vector Search  │
+                       │  (Local Files + │    │  + Metadata     │
                        │   Metadata)     │    │   Filtering     │
                        └─────────────────┘    └─────────────────┘
 ```
 
 ### How It Works
 
-1. **Data Ingestion**: Scrapes and processes 7 Groww URLs containing HDFC mutual fund information
-2. **Chunk Creation**: Breaks down data into structured chunks (facts, fees, portfolio, tax, etc.)
+1. **Data Ingestion**: Scrapes and processes 7 Groww URLs containing HDFC mutual fund information using Playwright
+2. **Chunk Creation**: Breaks down data into 70 structured chunks across 13 section types (portfolio_holdings, fund_manager, sector_allocation, advance_ratios, fund_objective, fees, facts_performance, riskometer_benchmark, faq, tax_redemption, contact_details, regulatory_links, downloads)
 3. **Vector Embedding**: Generates 768-dimensional embeddings using Google's text-embedding-004
-4. **Storage**: Stores vectors and metadata in ChromaDB for fast semantic search
-5. **Query Processing**: User query → embedding → vector search → top-k relevant chunks
+4. **Storage**: Stores vectors in local Vectra index files (vectra-index.bin + vectra-mapping.json) - NO external database needed
+5. **Query Processing**: User query → embedding → L2 distance vector search → multi-pass filtering → top-k relevant chunks
 6. **Answer Generation**: Gemini processes retrieved context + query → factual answer with source
 7. **Fallback**: If API fails, extracts direct answers from structured fields
 
 ### Key Components
 
 1. **Data Pipeline** (`scripts/`)
-   - Scrapes and processes official Groww pages
-   - Generates structured data chunks with source URLs
-   - Creates vector embeddings using text-embedding-004
-   - Builds search indexes (vector + metadata) for fast retrieval
+   - `ingest.js` - Scrapes official Groww pages using Playwright and extracts 13 section types
+   - `build-index.js` - Generates vector embeddings and builds Vectra index
+   - Generates structured data chunks with source URLs (70 chunks total)
+   - Creates search indexes (vector + metadata) for fast retrieval
 
 2. **RAG Backend** (`lib/`)
-   - `retriever.js` - Vector search with ChromaDB + metadata filtering
-   - `gemini.js` - Generates conversational answers with source citations
+   - `retriever.js` - Multi-pass vector search with Vectra + metadata filtering (strict → section → scheme → unfiltered)
+   - `gemini.js` - Generates conversational answers with source citations using gemini-1.5-flash-latest
    - Fallback mechanism when API is unavailable
 
 3. **Frontend** (`pages/`)
@@ -119,7 +121,7 @@ M1-MF-RAG/
 - Node.js 16+
 - npm or yarn
 - Google Gemini API key
-- Docker (for ChromaDB)
+- **NO Docker required!** (using Vectra local vector database)
 
 ### Installation
 
@@ -134,32 +136,26 @@ M1-MF-RAG/
    npm install
    ```
 
-3. **Start ChromaDB**
-   ```bash
-   docker run -d -p 8000:8000 chromadb/chroma
-   ```
-
-4. **Set up environment variables**
+3. **Set up environment variables**
    Create a `.env.local` file in the root directory:
    ```env
    GEMINI_API_KEY=your_google_gemini_api_key_here
-   CHROMA_URL=http://localhost:8000
-   CHROMA_COLLECTION=groww-hdfc
    NODE_ENV=development
    ```
 
-5. **Generate data and build vector indexes**
+4. **Scrape data and build vector indexes**
    ```bash
-   npm run process-data
+   npm run ingest
    npm run build-index
    ```
    This will:
-   - Extract data from Groww pages
-   - Generate vector embeddings
-   - Store vectors in ChromaDB
+   - Scrape 7 Groww pages using Playwright
+   - Extract 70 data chunks across 13 section types
+   - Generate 768-dimensional vector embeddings
+   - Build Vectra local index (NO Docker needed)
    - Create metadata indexes
 
-6. **Run development server**
+5. **Run development server**
    ```bash
    npm run dev
    ```
@@ -167,34 +163,25 @@ M1-MF-RAG/
 
 ## 🌐 Deployment
 
-### Vercel + Railway (Recommended)
+### Vercel (Recommended)
 
-**Frontend (Vercel)**
+**Deployment Steps**
 1. Push code to GitHub
 2. Connect repository to Vercel
 3. Add environment variables in Vercel dashboard:
    - `GEMINI_API_KEY`
-   - `CHROMA_URL` (your Railway ChromaDB URL)
-   - `CHROMA_COLLECTION=groww-hdfc`
    - `NODE_ENV=production`
-4. Set build command: `npm run process-data && npm run build-index && next build`
-5. Deploy!
+4. Deploy!
 
-**ChromaDB (Railway)**
-1. Create new project on Railway
-2. Deploy ChromaDB from Docker image: `chromadb/chroma`
-3. Expose port 8000
-4. Enable persistent volume for data storage
-5. Copy the public URL and use it as `CHROMA_URL`
+**Important**: The vector index files are already pre-built and committed to the repository, so no build-time data processing is needed. Just deploy and it works!
 
 ### Manual Deployment
 ```bash
-# Start ChromaDB
-docker run -d -p 8000:8000 -v chroma-data:/chroma/chroma chromadb/chroma
+# Scrape and build indexes
+npm run ingest
+npm run build-index
 
 # Build and start app
-npm run process-data
-npm run build-index
 npm run build
 npm run start
 ```
@@ -212,16 +199,23 @@ The assistant uses information from official Groww pages:
 7. **Download Forms** - https://groww.in/download-forms
 
 ### Data Extracted
-For each scheme:
-- NAV, 1Y/3Y/5Y returns, expense ratio
-- Exit load, lock-in period, minimum SIP
-- Top holdings with percentages, total holdings count
-- Tax implications (LTCG/STCG), ELSS tax benefits (Section 80C)
-- Risk level, rating, benchmark
-- Portfolio table, fees/TER details
-- Riskometer/benchmark section
-- FAQs, tax/redemption process
-- Fund manager information, regulatory links
+For each scheme, the scraper extracts **13 comprehensive section types**:
+
+1. **Portfolio Holdings** (`portfolio_holdings`) - Top 15+ holdings with company names, sectors, and allocation percentages
+2. **Fund Manager** (`fund_manager`) - Manager name, qualifications (CA, CFA, etc.), experience, and other managed schemes
+3. **Sector Allocation** (`portfolio_sectors`) - Equity sector breakdown with percentages
+4. **Advance Ratios** (`advance_ratios`) - P/E, P/B, Dividend Yield, Sharpe Ratio, Alpha, Beta, Standard Deviation, Turnover
+5. **Fund Objective** (`fund_objective`) - Investment objectives and strategy (50-2000 characters)
+6. **Facts & Performance** (`facts_performance`) - NAV, 1Y/3Y/5Y returns, AUM, minimum SIP, launch date
+7. **Fees & Charges** (`fees`) - Expense ratio (TER), exit load
+8. **Risk & Benchmark** (`riskometer_benchmark`) - Risk level, rating, benchmark comparison
+9. **FAQs** (`faq`) - Frequently asked questions about the scheme
+10. **Tax & Redemption** (`tax_redemption`) - LTCG/STCG, lock-in period, ELSS 80C benefits
+11. **Contact Details** (`contact_details`) - Email, phone, website, customer care
+12. **Regulatory Links** (`regulatory_links`) - Official regulatory documents and compliance links
+13. **Downloads** (`downloads`) - Statement download instructions
+
+**Total Data:** 70 chunks extracted from all sources
 
 All answers include citations to the exact source URL.
 
