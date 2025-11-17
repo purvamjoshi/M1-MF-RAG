@@ -1,0 +1,72 @@
+{
+  "hdfc-mid-cap-fund-direct-growth": {
+    "scheme_name": "HDFC Mid Cap Fund Direct Growth",
+    "minimum_sip": "100",
+    "minimum_lumpsum": "100",
+    "expense_ratio": "0.52",
+    "exit_load": "1% if redeemed within 1 year",
+    "lock_in_years": 0,
+    "nav": "226.08",
+    "returns_1y": "28.5",
+    "returns_3y": "20.8",
+    "returns_5y": "22.3",
+    "fund_manager": "Chirag Setalvad",
+    "risk_level": "Very High"
+  },
+  "hdfc-large-cap-fund-direct-growth": {
+    "scheme_name": "HDFC Large Cap Fund Direct Growth",
+    "minimum_sip": "100",
+    "minimum_lumpsum": "100",
+    "expense_ratio": "0.68",
+    "exit_load": "1% if redeemed within 1 year",
+    "lock_in_years": 0,
+    "nav": "298.45",
+    "returns_1y": "18.2",
+    "returns_3y": "15.1",
+    "returns_5y": "17.9",
+    "fund_manager": "Roshi Jain",
+    "risk_level": "Very High"
+  },
+  "hdfc-small-cap-fund-direct-growth": {
+    "scheme_name": "HDFC Small Cap Fund Direct Growth",
+    "minimum_sip": "100",
+    "minimum_lumpsum": "100",
+    "expense_ratio": "0.58",
+    "exit_load": "1% if redeemed within 1 year",
+    "lock_in_years": 0,
+    "nav": "163.24",
+    "returns_1y": "35.8",
+    "returns_3y": "32.1",
+    "returns_5y": "28.7",
+    "fund_manager": "Chirag Setalvad",
+    "risk_level": "Very High"
+  },
+  "hdfc-flexi-cap-fund-direct-growth": {
+    "scheme_name": "HDFC Flexi Cap Fund Direct Growth",
+    "minimum_sip": "100",
+    "minimum_lumpsum": "100",
+    "expense_ratio": "0.64",
+    "exit_load": "1% if redeemed within 1 year",
+    "lock_in_years": 0,
+    "nav": "1089.53",
+    "returns_1y": "23.4",
+    "returns_3y": "18.9",
+    "returns_5y": "21.2",
+    "fund_manager": "Roshi Jain",
+    "risk_level": "Very High"
+  },
+  "hdfc-taxsaver-fund-direct-growth": {
+    "scheme_name": "HDFC TaxSaver Fund Direct Growth",
+    "minimum_sip": "500",
+    "minimum_lumpsum": "500",
+    "expense_ratio": "0.54",
+    "exit_load": "Nil",
+    "lock_in_years": 3,
+    "nav": "1289.76",
+    "returns_1y": "24.2",
+    "returns_3y": "19.3",
+    "returns_5y": "20.8",
+    "fund_manager": "Chirag Setalvad",
+    "risk_level": "Very High"
+  }
+}
