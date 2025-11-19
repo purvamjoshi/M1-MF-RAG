@@ -1,5 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import Head from 'next/head';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 export default function Home() {
   const [messages, setMessages] = useState([
@@ -157,7 +159,13 @@ export default function Home() {
                         : 'bg-white border border-gray-200 text-gray-800'
                     }`}
                   >
-                  <p className="text-sm whitespace-pre-line">{msg.text}</p>
+                  {msg.type === 'user' ? (
+                    <p className="text-sm whitespace-pre-line">{msg.text}</p>
+                  ) : (
+                    <div className="text-sm prose prose-sm max-w-none prose-headings:mt-2 prose-headings:mb-1 prose-p:my-1 prose-table:my-2 prose-strong:text-gray-900 prose-strong:font-semibold">
+                      <ReactMarkdown remarkPlugins={[remarkGfm]}>{msg.text}</ReactMarkdown>
+                    </div>
+                  )}
                   {msg.sourceUrl && (
                     <div className="mt-3 pt-3 border-t border-gray-200">
                       <a
