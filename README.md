@@ -1,9 +1,8 @@
 # Groww Mutual Fund FAQ Assistant
 
-A smart FAQ assistant for Groww mutual funds that answers factual questions about HDFC mutual fund schemes using RAG (Retrieval-Augmented Generation) with vector search. Built with **Vectra** (pure JavaScript vector database) and **Google Gemini API** for answer generation - **NO DOCKER NEEDED!**
+A smart FAQ assistant for Groww mutual funds that answers factual questions about HDFC mutual fund schemes using RAG (Retrieval-Augmented Generation) with vector search. Built with **Vectra** (pure JavaScript vector database) and **Google Gemini 2.0 Flash API** for answer generation - **NO DOCKER NEEDED!**
 
-![Chat Interface](<img width="1919" height="908" alt="image" src="https://github.com/user-attachments/assets/fbd34707-8d19-4569-aaf4-94877af83360" />
-) <!-- Replace with actual screenshot -->
+![Chat Interface](./assets/screenshot.png)
 
 ## 🚀 Features
 
@@ -24,7 +23,7 @@ A smart FAQ assistant for Groww mutual funds that answers factual questions abou
 - **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework
 
 ### AI & Search
-- **[Google Gemini API](https://ai.google.dev/)** - LLM for answer generation (gemini-1.5-flash-latest)
+- **[Google Gemini 2.0 Flash](https://ai.google.dev/)** - Advanced LLM for answer generation (gemini-2.0-flash-exp)
 - **[Google Text Embeddings](https://ai.google.dev/)** - text-embedding-004 for vector embeddings (768 dimensions)
 - **[Vectra](https://github.com/Stevenic/vectra)** - Pure JavaScript local vector database (NO Docker required)
 
@@ -80,7 +79,7 @@ A smart FAQ assistant for Groww mutual funds that answers factual questions abou
 
 2. **RAG Backend** (`lib/`)
    - `retriever.js` - Multi-pass vector search with Vectra + metadata filtering (strict → section → scheme → unfiltered)
-   - `gemini.js` - Generates conversational answers with source citations using gemini-1.5-flash-latest
+   - `gemini.js` - Generates conversational answers with source citations using gemini-2.0-flash-exp
    - Fallback mechanism when API is unavailable
 
 3. **Frontend** (`pages/`)
