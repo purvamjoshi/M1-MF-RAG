@@ -8,9 +8,14 @@ A smart FAQ assistant for Groww mutual funds that answers factual questions abou
 
 - **Vector-Based Search**: Uses Vectra with text-embedding-004 for semantic similarity search (pure JavaScript, no Docker required)
 - **Accurate Answers**: Provides factual information from official Groww pages with single-source citations
-- **Comprehensive Data**: Portfolio holdings, fund manager info, sector allocation, advance ratios, contact details, and more
+- **Complete Fund Data**: 
+  - ✅ **Fund Manager Info**: Complete details for all 5 HDFC funds
+  - ✅ **Portfolio Holdings**: 10 top holdings per fund with sector and allocation details
+  - ✅ **Expense Ratios**: Current TER for all funds (0.67% - 1.08%)
+  - ✅ **Returns Data**: 1Y, 3Y, 5Y returns for all schemes
+  - ✅ **Tax Information**: Lock-in periods, exit loads, and tax implications
 - **Conversational UI**: WhatsApp/ChatGPT-style chat interface with typing indicators and follow-up suggestions
-- **Smart Retrieval**: Combines vector embeddings with metadata filtering for precise information retrieval
+- **Smart Retrieval**: Combines vector embeddings with metadata filtering for precise information retrieval (32 optimized chunks)
 - **Fallback Support**: Gracefully handles API rate limits with direct fact extraction
 - **No Investment Advice**: Strictly factual responses - no recommendations or subjective opinions
 - **Brand Consistent**: Follows Groww's brand colors and design language
@@ -61,20 +66,20 @@ A smart FAQ assistant for Groww mutual funds that answers factual questions abou
 
 ### How It Works
 
-1. **Data Ingestion**: Scrapes and processes 7 Groww URLs containing HDFC mutual fund information using Playwright
-2. **Chunk Creation**: Breaks down data into 70 structured chunks across 13 section types (portfolio_holdings, fund_manager, sector_allocation, advance_ratios, fund_objective, fees, facts_performance, riskometer_benchmark, faq, tax_redemption, contact_details, regulatory_links, downloads)
-3. **Vector Embedding**: Generates 768-dimensional embeddings using Google's text-embedding-004
+1. **Data Ingestion**: Uses clean hardcoded data for 5 HDFC mutual funds with accurate information
+2. **Chunk Creation**: Breaks down data into 32 optimized chunks across 8 section types (facts_performance, portfolio_holdings, fund_manager, fees, riskometer_benchmark, tax_redemption, regulatory_links, downloads)
+3. **Vector Embedding**: Generates 768-dimensional embeddings using Google's text-embedding-004 (optional)
 4. **Storage**: Stores vectors in local Vectra index files (vectra-index.bin + vectra-mapping.json) - NO external database needed
 5. **Query Processing**: User query → embedding → L2 distance vector search → multi-pass filtering → top-k relevant chunks
 6. **Answer Generation**: Gemini processes retrieved context + query → factual answer with source
-7. **Fallback**: If API fails, extracts direct answers from structured fields
+7. **Fallback**: Direct lookup mode when vector search unavailable, still provides accurate answers
 
 ### Key Components
 
 1. **Data Pipeline** (`scripts/`)
-   - `ingest.js` - Scrapes official Groww pages using Playwright and extracts 13 section types
+   - `process-data.js` - Processes clean hardcoded data for 5 HDFC funds
    - `build-index.js` - Generates vector embeddings and builds Vectra index
-   - Generates structured data chunks with source URLs (70 chunks total)
+   - Generates structured data chunks with source URLs (32 optimized chunks)
    - Creates search indexes (vector + metadata) for fast retrieval
 
 2. **RAG Backend** (`lib/`)

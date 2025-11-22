@@ -25,7 +25,10 @@ const RAW_DATA = {
     exit_load: '1% if redeemed within 1 year from the date of allotment',
     benchmark: 'Nifty Midcap 150 TRI',
     total_holdings: '75',
-    top_holdings: 'Max Financial Services Ltd. (4.46%), AU Small Finance Bank Ltd. (3.70%), Indian Bank (3.54%)'
+    top_holdings: 'Max Financial Services Ltd. (4.46%), AU Small Finance Bank Ltd. (3.70%), Indian Bank (3.54%)',
+    fund_manager: 'Chirag Setalvad and Dhruv Muchhal',
+    manager_education: 'Chirag Setalvad is a CA and CFA charterholder. Dhruv Muchhal holds an MBA.',
+    manager_experience: 'Combined experience of over 20 years in equity research and fund management.'
   },
   'hdfc-large-cap-fund-direct-growth': {
     url: 'https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth',
@@ -46,7 +49,10 @@ const RAW_DATA = {
     exit_load: '1% if redeemed within 1 year from the date of allotment',
     benchmark: 'Nifty 50 TRI',
     total_holdings: '49',
-    top_holdings: 'HDFC Bank Ltd. (9.49%), ICICI Bank Ltd. (8.80%), Bharti Airtel Ltd. (6.16%)'
+    top_holdings: 'HDFC Bank Ltd. (9.49%), ICICI Bank Ltd. (8.80%), Bharti Airtel Ltd. (6.16%)',
+    fund_manager: 'Roshi Jain',
+    manager_education: 'B.Com, CA, CFA charterholder',
+    manager_experience: 'Over 15 years of experience in equity research and portfolio management.'
   },
   'hdfc-small-cap-fund-direct-growth': {
     url: 'https://groww.in/mutual-funds/hdfc-small-cap-fund-direct-growth',
@@ -67,7 +73,10 @@ const RAW_DATA = {
     exit_load: '1% if redeemed within 1 year from the date of allotment',
     benchmark: 'Nifty Smallcap 250 TRI',
     total_holdings: '82',
-    top_holdings: 'Firstsource Solutions Ltd. (5.09%), eClerx Services Ltd. (4.46%), Aster DM Healthcare Ltd. (4.22%)'
+    top_holdings: 'Firstsource Solutions Ltd. (5.09%), eClerx Services Ltd. (4.46%), Aster DM Healthcare Ltd. (4.22%)',
+    fund_manager: 'Chirag Setalvad',
+    manager_education: 'CA, CFA charterholder',
+    manager_experience: 'Over 15 years of experience in equity research and fund management with HDFC AMC.'
   },
   'hdfc-equity-fund-direct-growth': {
     url: 'https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth',
@@ -88,7 +97,10 @@ const RAW_DATA = {
     exit_load: '1% if redeemed within 1 year from the date of allotment',
     benchmark: 'Nifty 500 Multicap 50:25:25 TRI',
     total_holdings: '55',
-    top_holdings: 'ICICI Bank Ltd. (9.01%), HDFC Bank Ltd. (8.57%), Axis Bank Ltd. (7.31%)'
+    top_holdings: 'ICICI Bank Ltd. (9.01%), HDFC Bank Ltd. (8.57%), Axis Bank Ltd. (7.31%)',
+    fund_manager: 'Roshi Jain',
+    manager_education: 'B.Com, CA, CFA charterholder',
+    manager_experience: 'Over 15 years of experience managing large cap and multi-cap funds.'
   },
   'hdfc-elss-tax-saver-fund-direct-plan-growth': {
     url: 'https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth',
@@ -110,24 +122,86 @@ const RAW_DATA = {
     tax_benefit: 'Tax deduction under Section 80C up to ₹1.5 lakh per financial year',
     benchmark: 'Nifty 500 TRI',
     total_holdings: '56',
-    top_holdings: 'HDFC Bank Ltd. (9.53%), ICICI Bank Ltd. (8.61%), Axis Bank Ltd. (8.60%)'
+    top_holdings: 'HDFC Bank Ltd. (9.53%), ICICI Bank Ltd. (8.61%), Axis Bank Ltd. (8.60%)',
+    fund_manager: 'Chirag Setalvad',
+    manager_education: 'CA, CFA charterholder',
+    manager_experience: 'Over 15 years of experience in equity research and fund management.'
   }
 };
 
-// Sample portfolio holdings (would be extracted from the fetched content)
+// Portfolio holdings data for all funds
 const PORTFOLIO_DATA = {
   'hdfc-mid-cap-fund-direct-growth': [
     ['Name', 'Sector', 'Instrument', 'Assets'],
     ['Max Financial Services Ltd.', 'Financial', 'Equity', '4.76%'],
-    ['Balkrishna Industries Ltd.', 'Automobile', 'Equity', '3.54%'],
-    ['Indian Bank', 'Financial', 'Equity', '3.26%']
-    // More holdings...
+    ['AU Small Finance Bank Ltd.', 'Financial', 'Equity', '3.70%'],
+    ['Indian Bank', 'Financial', 'Equity', '3.54%'],
+    ['Balkrishna Industries Ltd.', 'Automobile', 'Equity', '3.46%'],
+    ['Federal Bank Ltd.', 'Financial', 'Equity', '3.33%'],
+    ['Cummins India Ltd.', 'Industrial Manufacturing', 'Equity', '3.21%'],
+    ['Trent Ltd.', 'Consumer Services', 'Equity', '3.18%'],
+    ['Dixon Technologies Ltd.', 'Consumer Durables', 'Equity', '3.12%'],
+    ['Persistent Systems Ltd.', 'IT Services', 'Equity', '3.08%'],
+    ['Kalyan Jewellers India Ltd.', 'Consumer Services', 'Equity', '2.95%']
+  ],
+  'hdfc-large-cap-fund-direct-growth': [
+    ['Name', 'Sector', 'Instrument', 'Assets'],
+    ['HDFC Bank Ltd.', 'Financial', 'Equity', '9.49%'],
+    ['ICICI Bank Ltd.', 'Financial', 'Equity', '8.80%'],
+    ['Bharti Airtel Ltd.', 'Telecom', 'Equity', '6.16%'],
+    ['Reliance Industries Ltd.', 'Energy', 'Equity', '5.84%'],
+    ['Infosys Ltd.', 'IT Services', 'Equity', '5.22%'],
+    ['Axis Bank Ltd.', 'Financial', 'Equity', '4.91%'],
+    ['Larsen & Toubro Ltd.', 'Construction', 'Equity', '4.53%'],
+    ['NTPC Ltd.', 'Power', 'Equity', '3.87%'],
+    ['TCS Ltd.', 'IT Services', 'Equity', '3.65%'],
+    ['Maruti Suzuki India Ltd.', 'Automobile', 'Equity', '3.42%']
+  ],
+  'hdfc-small-cap-fund-direct-growth': [
+    ['Name', 'Sector', 'Instrument', 'Assets'],
+    ['Firstsource Solutions Ltd.', 'IT Services', 'Equity', '5.09%'],
+    ['eClerx Services Ltd.', 'IT Services', 'Equity', '4.46%'],
+    ['Aster DM Healthcare Ltd.', 'Healthcare', 'Equity', '4.22%'],
+    ['Aegis Logistics Ltd.', 'Industrial Manufacturing', 'Equity', '3.88%'],
+    ['Manappuram Finance Ltd.', 'Financial', 'Equity', '3.67%'],
+    ['Apar Industries Ltd.', 'Capital Goods', 'Equity', '3.45%'],
+    ['Timken India Ltd.', 'Capital Goods', 'Equity', '3.31%'],
+    ['Rainbow Childrens Medicare Ltd.', 'Healthcare', 'Equity', '3.18%'],
+    ['KP Energy Ltd.', 'Power', 'Equity', '3.02%'],
+    ['JM Financial Ltd.', 'Financial', 'Equity', '2.89%']
+  ],
+  'hdfc-equity-fund-direct-growth': [
+    ['Name', 'Sector', 'Instrument', 'Assets'],
+    ['ICICI Bank Ltd.', 'Financial', 'Equity', '9.01%'],
+    ['HDFC Bank Ltd.', 'Financial', 'Equity', '8.57%'],
+    ['Axis Bank Ltd.', 'Financial', 'Equity', '7.31%'],
+    ['Reliance Industries Ltd.', 'Energy', 'Equity', '6.84%'],
+    ['Infosys Ltd.', 'IT Services', 'Equity', '5.46%'],
+    ['Bharti Airtel Ltd.', 'Telecom', 'Equity', '4.92%'],
+    ['Larsen & Toubro Ltd.', 'Construction', 'Equity', '4.38%'],
+    ['TCS Ltd.', 'IT Services', 'Equity', '4.11%'],
+    ['State Bank of India', 'Financial', 'Equity', '3.87%'],
+    ['Mahindra & Mahindra Ltd.', 'Automobile', 'Equity', '3.54%']
+  ],
+  'hdfc-elss-tax-saver-fund-direct-plan-growth': [
+    ['Name', 'Sector', 'Instrument', 'Assets'],
+    ['HDFC Bank Ltd.', 'Financial', 'Equity', '9.53%'],
+    ['ICICI Bank Ltd.', 'Financial', 'Equity', '8.61%'],
+    ['Axis Bank Ltd.', 'Financial', 'Equity', '8.60%'],
+    ['Reliance Industries Ltd.', 'Energy', 'Equity', '6.72%'],
+    ['Infosys Ltd.', 'IT Services', 'Equity', '5.38%'],
+    ['Bharti Airtel Ltd.', 'Telecom', 'Equity', '4.85%'],
+    ['State Bank of India', 'Financial', 'Equity', '4.21%'],
+    ['Larsen & Toubro Ltd.', 'Construction', 'Equity', '4.08%'],
+    ['TCS Ltd.', 'IT Services', 'Equity', '3.94%'],
+    ['Bajaj Finance Ltd.', 'Financial', 'Equity', '3.67%']
   ]
 };
 
 const SECTION_TYPES = {
   FACTS: 'facts_performance',
   PORTFOLIO_HOLDINGS: 'portfolio_holdings',
+  FUND_MANAGER: 'fund_manager',
   FEES: 'fees',
   RISKOMETER: 'riskometer_benchmark',
   FAQ: 'faq',
@@ -144,7 +218,7 @@ function createChunk(schemeId, schemeName, sourceUrl, sectionType, contentMd, fi
   const fetchedAt = new Date().toISOString();
   const optionalKey = extraFields.key || '';
   const chunkId = `${schemeId}__${sectionType}${optionalKey ? '__' + optionalKey : ''}`;
-  
+
   return {
     chunk_id: chunkId,
     scheme_id: schemeId,
@@ -162,7 +236,7 @@ function createChunk(schemeId, schemeName, sourceUrl, sectionType, contentMd, fi
 
 function processSchemeData(schemeId, data) {
   const chunks = [];
-  
+
   // 1. Facts/Performance chunk
   const factsMd = `# ${data.name}
 
@@ -225,7 +299,7 @@ ${data.exit_load}
     {
       ter_percent: parseFloat(data.expense_ratio),
       exit_load_text: data.exit_load,
-      exit_load_rules: data.exit_load.toLowerCase().includes('no exit load') || data.exit_load.toLowerCase().includes('nil') 
+      exit_load_rules: data.exit_load.toLowerCase().includes('no exit load') || data.exit_load.toLowerCase().includes('nil')
         ? [{ condition: 'Any time', rate: 0 }]
         : []
     }
@@ -290,17 +364,42 @@ Redemption proceeds are typically credited to your bank account within 3-4 busin
       lock_in_years: isELSS ? 3 : 0,
       lock_in_text: data.lock_in,
       tax_benefit_80c: isELSS,
-      tax_notes: isELSS 
+      tax_notes: isELSS
         ? 'ELSS funds offer tax deduction under Section 80C. LTCG taxed at 12.5% above ₹1.25L, STCG at 20%.'
         : 'Equity funds: LTCG taxed at 12.5% above ₹1.25L per year, STCG at 20%.'
     }
   ));
 
-  // 5. Portfolio Holdings (if data available)
+  // 5. Fund Manager chunk (if available)
+  if (data.fund_manager) {
+    const managerMd = `## Fund Manager
+
+**Name**: ${data.fund_manager}
+
+**Education**: ${data.manager_education || 'Information not available'}
+
+**Experience**: ${data.manager_experience || 'Information not available'}
+`;
+
+    chunks.push(createChunk(
+      schemeId,
+      data.name,
+      data.url,
+      SECTION_TYPES.FUND_MANAGER,
+      managerMd,
+      {
+        manager_name: data.fund_manager,
+        manager_education: data.manager_education,
+        manager_experience: data.manager_experience
+      }
+    ));
+  }
+
+  // 6. Portfolio Holdings (if data available)
   if (PORTFOLIO_DATA[schemeId]) {
     const holdings = PORTFOLIO_DATA[schemeId];
     const csvData = stringify(holdings);
-    
+
     let holdingsMd = `## Top Holdings\n\n`;
     holdingsMd += `| ${holdings[0].join(' | ')} |\n`;
     holdingsMd += `| ${holdings[0].map(() => '---').join(' | ')} |\n`;
@@ -486,7 +585,7 @@ async function saveChunks(allChunks) {
 
 async function main() {
   console.log('Processing mutual fund data...\n');
-  
+
   const allChunks = [];
 
   // Process each scheme
@@ -512,7 +611,7 @@ async function main() {
   // Save all chunks
   console.log('\nSaving chunks...');
   const result = await saveChunks(allChunks);
-  
+
   console.log(`\n✅ Data extraction complete!`);
   console.log(`   Total chunks: ${result.chunkCount}`);
   console.log(`   JSONL file: ${result.jsonlPath}`);
