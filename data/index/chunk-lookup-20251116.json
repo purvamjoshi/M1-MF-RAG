@@ -1,0 +1,416 @@
+{
+  "hdfc-mid-cap-fund-direct-growth__facts_performance": {
+    "chunk_id": "hdfc-mid-cap-fund-direct-growth__facts_performance",
+    "scheme_id": "hdfc-mid-cap-fund-direct-growth",
+    "scheme_display_name": "HDFC Mid Cap Fund Direct Growth",
+    "section_type": "facts_performance",
+    "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+    "fetched_at": "2025-11-16T09:13:37.926Z",
+    "content_md": "# HDFC Mid Cap Fund Direct Growth\n\n## Key Facts\n\n- **NAV**: ₹224.35 (as of 14 Nov 2025)\n- **Category**: Equity Mid Cap\n- **Risk Level**: Very High Risk\n- **Minimum SIP**: ₹100\n- **Fund Size (AUM)**: ₹89,383.23 Cr\n- **Expense Ratio**: 0.71%\n- **Rating**: 5/5\n- **Lock-in Period**: No lock-in\n\n## Returns\n\n- **1 Year**: 12.5%\n- **3 Year (Annualized)**: 27.0%\n- **5 Year (Annualized)**: 29.2%",
+    "content_csv": "",
+    "fields_json": {
+      "nav": 224.35,
+      "nav_date": "14 Nov 2025",
+      "category": "Equity Mid Cap",
+      "minimum_sip": 100,
+      "fund_size": "89,383.23 Cr",
+      "expense_ratio": 0.71,
+      "rating": 5,
+      "returns_1y": 12.5,
+      "returns_3y": 27,
+      "returns_5y": 29.2
+    },
+    "hash": "43577fdbeaec726e684f0835912b5b8765128c6ac6235056638f822dd1296b74"
+  },
+  "hdfc-mid-cap-fund-direct-growth__fees": {
+    "chunk_id": "hdfc-mid-cap-fund-direct-growth__fees",
+    "scheme_id": "hdfc-mid-cap-fund-direct-growth",
+    "scheme_display_name": "HDFC Mid Cap Fund Direct Growth",
+    "section_type": "fees",
+    "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+    "fetched_at": "2025-11-16T09:13:37.928Z",
+    "content_md": "## Fees & Charges\n\n- **Total Expense Ratio (TER)**: 0.71%\n- **Exit Load**: 1% if redeemed within 1 year from the date of allotment\n- **Stamp Duty**: 0.005% on purchase (as per SEBI regulations)\n\n### Exit Load Details\n\n1% if redeemed within 1 year from the date of allotment",
+    "content_csv": "",
+    "fields_json": {
+      "ter_percent": 0.71,
+      "exit_load_text": "1% if redeemed within 1 year from the date of allotment",
+      "exit_load_rules": []
+    },
+    "hash": "1ed286d0ea8e107fe0da4cee7949784dfd890c0d46107761f7934bb9b93982b0"
+  },
+  "hdfc-mid-cap-fund-direct-growth__riskometer_benchmark": {
+    "chunk_id": "hdfc-mid-cap-fund-direct-growth__riskometer_benchmark",
+    "scheme_id": "hdfc-mid-cap-fund-direct-growth",
+    "scheme_display_name": "HDFC Mid Cap Fund Direct Growth",
+    "section_type": "riskometer_benchmark",
+    "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+    "fetched_at": "2025-11-16T09:13:37.928Z",
+    "content_md": "## Risk & Benchmark\n\n- **Risk Level**: Very High Risk\n- **Category**: Equity Mid Cap\n\nThe riskometer indicates the level of risk associated with this mutual fund scheme.",
+    "content_csv": "",
+    "fields_json": {
+      "riskometer_category": "Very High Risk",
+      "category": "Equity Mid Cap"
+    },
+    "hash": "cc991fb65381094907a0fdb7d7a37e1624c78e648b3112fe3a593af8ca5b6f2a"
+  },
+  "hdfc-mid-cap-fund-direct-growth__tax_redemption": {
+    "chunk_id": "hdfc-mid-cap-fund-direct-growth__tax_redemption",
+    "scheme_id": "hdfc-mid-cap-fund-direct-growth",
+    "scheme_display_name": "HDFC Mid Cap Fund Direct Growth",
+    "section_type": "tax_redemption",
+    "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+    "fetched_at": "2025-11-16T09:13:37.928Z",
+    "content_md": "## Tax & Redemption\n\n- **Lock-in Period**: No lock-in\n\n\n### Taxation\n\n**Equity Funds Tax Rules:**\n- **Long-term Capital Gains (LTCG)**: Holding period > 12 months\n  - Tax: 12.5% on gains above ₹1.25 lakh per year\n- **Short-term Capital Gains (STCG)**: Holding period ≤ 12 months\n  - Tax: 20% on gains\n\n\n\n### Redemption Process\n\n1. Log in to your Groww account\n2. Navigate to your mutual fund holdings\n3. Select the scheme and click \"Redeem\"\n4. Choose redemption amount (units or value)\n5. Submit the request\n\nRedemption proceeds are typically credited to your bank account within 3-4 business days.",
+    "content_csv": "",
+    "fields_json": {
+      "lock_in_years": 0,
+      "lock_in_text": "No lock-in",
+      "tax_benefit_80c": false,
+      "tax_notes": "Equity funds: LTCG taxed at 12.5% above ₹1.25L per year, STCG at 20%."
+    },
+    "hash": "9300bbf3e41fbd2290e666ff2cd1a2f4a1ccde0aab6adb4e63b944802a061325"
+  },
+  "hdfc-mid-cap-fund-direct-growth__portfolio_holdings": {
+    "chunk_id": "hdfc-mid-cap-fund-direct-growth__portfolio_holdings",
+    "scheme_id": "hdfc-mid-cap-fund-direct-growth",
+    "scheme_display_name": "HDFC Mid Cap Fund Direct Growth",
+    "section_type": "portfolio_holdings",
+    "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+    "fetched_at": "2025-11-16T09:13:37.929Z",
+    "content_md": "## Top Holdings\n\n| Name | Sector | Instrument | Assets |\n| --- | --- | --- | --- |\n| Max Financial Services Ltd. | Financial | Equity | 4.76% |\n| Balkrishna Industries Ltd. | Automobile | Equity | 3.54% |\n| Indian Bank | Financial | Equity | 3.26% |",
+    "content_csv": "Name,Sector,Instrument,Assets\nMax Financial Services Ltd.,Financial,Equity,4.76%\nBalkrishna Industries Ltd.,Automobile,Equity,3.54%\nIndian Bank,Financial,Equity,3.26%\n",
+    "fields_json": {
+      "table_headers": [
+        "Name",
+        "Sector",
+        "Instrument",
+        "Assets"
+      ],
+      "row_count": 3
+    },
+    "hash": "625fbef4748f2bb14468ba6e22caf755c21abecb24263d210ee9be98bafde244"
+  },
+  "hdfc-large-cap-fund-direct-growth__facts_performance": {
+    "chunk_id": "hdfc-large-cap-fund-direct-growth__facts_performance",
+    "scheme_id": "hdfc-large-cap-fund-direct-growth",
+    "scheme_display_name": "HDFC Large Cap Fund Direct Growth",
+    "section_type": "facts_performance",
+    "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+    "fetched_at": "2025-11-16T09:13:37.929Z",
+    "content_md": "# HDFC Large Cap Fund Direct Growth\n\n## Key Facts\n\n- **NAV**: ₹1,268.60 (as of 14 Nov 2025)\n- **Category**: Equity Large Cap\n- **Risk Level**: Very High Risk\n- **Minimum SIP**: ₹100\n- **Fund Size (AUM)**: ₹39,779.26 Cr\n- **Expense Ratio**: 0.97%\n- **Rating**: 5/5\n- **Lock-in Period**: No lock-in\n\n## Returns\n\n- **1 Year**: 8.2%\n- **3 Year (Annualized)**: 16.4%\n- **5 Year (Annualized)**: 20.2%",
+    "content_csv": "",
+    "fields_json": {
+      "nav": 1268.6,
+      "nav_date": "14 Nov 2025",
+      "category": "Equity Large Cap",
+      "minimum_sip": 100,
+      "fund_size": "39,779.26 Cr",
+      "expense_ratio": 0.97,
+      "rating": 5,
+      "returns_1y": 8.2,
+      "returns_3y": 16.4,
+      "returns_5y": 20.2
+    },
+    "hash": "e76da58d436122fd4d7033726e7a8c676b76213c5e71ff7d619f8bdd15ed1650"
+  },
+  "hdfc-large-cap-fund-direct-growth__fees": {
+    "chunk_id": "hdfc-large-cap-fund-direct-growth__fees",
+    "scheme_id": "hdfc-large-cap-fund-direct-growth",
+    "scheme_display_name": "HDFC Large Cap Fund Direct Growth",
+    "section_type": "fees",
+    "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+    "fetched_at": "2025-11-16T09:13:37.929Z",
+    "content_md": "## Fees & Charges\n\n- **Total Expense Ratio (TER)**: 0.97%\n- **Exit Load**: 1% if redeemed within 1 year from the date of allotment\n- **Stamp Duty**: 0.005% on purchase (as per SEBI regulations)\n\n### Exit Load Details\n\n1% if redeemed within 1 year from the date of allotment",
+    "content_csv": "",
+    "fields_json": {
+      "ter_percent": 0.97,
+      "exit_load_text": "1% if redeemed within 1 year from the date of allotment",
+      "exit_load_rules": []
+    },
+    "hash": "74f415cdf5b30abd7d4a2b7d19838b28ccaff1013b44ca20cab270be7341e12d"
+  },
+  "hdfc-large-cap-fund-direct-growth__riskometer_benchmark": {
+    "chunk_id": "hdfc-large-cap-fund-direct-growth__riskometer_benchmark",
+    "scheme_id": "hdfc-large-cap-fund-direct-growth",
+    "scheme_display_name": "HDFC Large Cap Fund Direct Growth",
+    "section_type": "riskometer_benchmark",
+    "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+    "fetched_at": "2025-11-16T09:13:37.929Z",
+    "content_md": "## Risk & Benchmark\n\n- **Risk Level**: Very High Risk\n- **Category**: Equity Large Cap\n\nThe riskometer indicates the level of risk associated with this mutual fund scheme.",
+    "content_csv": "",
+    "fields_json": {
+      "riskometer_category": "Very High Risk",
+      "category": "Equity Large Cap"
+    },
+    "hash": "e1b246d922e31aac5fa793c3c57926036ca671f270730592f1cb343044423759"
+  },
+  "hdfc-large-cap-fund-direct-growth__tax_redemption": {
+    "chunk_id": "hdfc-large-cap-fund-direct-growth__tax_redemption",
+    "scheme_id": "hdfc-large-cap-fund-direct-growth",
+    "scheme_display_name": "HDFC Large Cap Fund Direct Growth",
+    "section_type": "tax_redemption",
+    "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+    "fetched_at": "2025-11-16T09:13:37.929Z",
+    "content_md": "## Tax & Redemption\n\n- **Lock-in Period**: No lock-in\n\n\n### Taxation\n\n**Equity Funds Tax Rules:**\n- **Long-term Capital Gains (LTCG)**: Holding period > 12 months\n  - Tax: 12.5% on gains above ₹1.25 lakh per year\n- **Short-term Capital Gains (STCG)**: Holding period ≤ 12 months\n  - Tax: 20% on gains\n\n\n\n### Redemption Process\n\n1. Log in to your Groww account\n2. Navigate to your mutual fund holdings\n3. Select the scheme and click \"Redeem\"\n4. Choose redemption amount (units or value)\n5. Submit the request\n\nRedemption proceeds are typically credited to your bank account within 3-4 business days.",
+    "content_csv": "",
+    "fields_json": {
+      "lock_in_years": 0,
+      "lock_in_text": "No lock-in",
+      "tax_benefit_80c": false,
+      "tax_notes": "Equity funds: LTCG taxed at 12.5% above ₹1.25L per year, STCG at 20%."
+    },
+    "hash": "9300bbf3e41fbd2290e666ff2cd1a2f4a1ccde0aab6adb4e63b944802a061325"
+  },
+  "hdfc-small-cap-fund-direct-growth__facts_performance": {
+    "chunk_id": "hdfc-small-cap-fund-direct-growth__facts_performance",
+    "scheme_id": "hdfc-small-cap-fund-direct-growth",
+    "scheme_display_name": "HDFC Small Cap Fund Direct Growth",
+    "section_type": "facts_performance",
+    "source_url": "https://groww.in/mutual-funds/hdfc-small-cap-fund-direct-growth",
+    "fetched_at": "2025-11-16T09:13:37.929Z",
+    "content_md": "# HDFC Small Cap Fund Direct Growth\n\n## Key Facts\n\n- **NAV**: ₹162.41 (as of 14 Nov 2025)\n- **Category**: Equity Small Cap\n- **Risk Level**: Very High Risk\n- **Minimum SIP**: ₹100\n- **Fund Size (AUM)**: ₹38,412.10 Cr\n- **Expense Ratio**: 0.82%\n- **Rating**: 4/5\n- **Lock-in Period**: No lock-in\n\n## Returns\n\n- **1 Year**: 7.1%\n- **3 Year (Annualized)**: 23.2%\n- **5 Year (Annualized)**: 30.0%",
+    "content_csv": "",
+    "fields_json": {
+      "nav": 162.41,
+      "nav_date": "14 Nov 2025",
+      "category": "Equity Small Cap",
+      "minimum_sip": 100,
+      "fund_size": "38,412.10 Cr",
+      "expense_ratio": 0.82,
+      "rating": 4,
+      "returns_1y": 7.1,
+      "returns_3y": 23.2,
+      "returns_5y": 30
+    },
+    "hash": "1ca96639eb56ef714ecd7cbdad073cfb784b242aca3a1da21c545251c3090f53"
+  },
+  "hdfc-small-cap-fund-direct-growth__fees": {
+    "chunk_id": "hdfc-small-cap-fund-direct-growth__fees",
+    "scheme_id": "hdfc-small-cap-fund-direct-growth",
+    "scheme_display_name": "HDFC Small Cap Fund Direct Growth",
+    "section_type": "fees",
+    "source_url": "https://groww.in/mutual-funds/hdfc-small-cap-fund-direct-growth",
+    "fetched_at": "2025-11-16T09:13:37.929Z",
+    "content_md": "## Fees & Charges\n\n- **Total Expense Ratio (TER)**: 0.82%\n- **Exit Load**: 1% if redeemed within 1 year from the date of allotment\n- **Stamp Duty**: 0.005% on purchase (as per SEBI regulations)\n\n### Exit Load Details\n\n1% if redeemed within 1 year from the date of allotment",
+    "content_csv": "",
+    "fields_json": {
+      "ter_percent": 0.82,
+      "exit_load_text": "1% if redeemed within 1 year from the date of allotment",
+      "exit_load_rules": []
+    },
+    "hash": "5ef82df9c77a30f9d6b848c5186ea39ef44f9525dc96eeed4eeea917494262a8"
+  },
+  "hdfc-small-cap-fund-direct-growth__riskometer_benchmark": {
+    "chunk_id": "hdfc-small-cap-fund-direct-growth__riskometer_benchmark",
+    "scheme_id": "hdfc-small-cap-fund-direct-growth",
+    "scheme_display_name": "HDFC Small Cap Fund Direct Growth",
+    "section_type": "riskometer_benchmark",
+    "source_url": "https://groww.in/mutual-funds/hdfc-small-cap-fund-direct-growth",
+    "fetched_at": "2025-11-16T09:13:37.929Z",
+    "content_md": "## Risk & Benchmark\n\n- **Risk Level**: Very High Risk\n- **Category**: Equity Small Cap\n\nThe riskometer indicates the level of risk associated with this mutual fund scheme.",
+    "content_csv": "",
+    "fields_json": {
+      "riskometer_category": "Very High Risk",
+      "category": "Equity Small Cap"
+    },
+    "hash": "66e8d708158bec044e1a9d28c4fa1808ae2119ac6eeedfd214ade713be92fab7"
+  },
+  "hdfc-small-cap-fund-direct-growth__tax_redemption": {
+    "chunk_id": "hdfc-small-cap-fund-direct-growth__tax_redemption",
+    "scheme_id": "hdfc-small-cap-fund-direct-growth",
+    "scheme_display_name": "HDFC Small Cap Fund Direct Growth",
+    "section_type": "tax_redemption",
+    "source_url": "https://groww.in/mutual-funds/hdfc-small-cap-fund-direct-growth",
+    "fetched_at": "2025-11-16T09:13:37.929Z",
+    "content_md": "## Tax & Redemption\n\n- **Lock-in Period**: No lock-in\n\n\n### Taxation\n\n**Equity Funds Tax Rules:**\n- **Long-term Capital Gains (LTCG)**: Holding period > 12 months\n  - Tax: 12.5% on gains above ₹1.25 lakh per year\n- **Short-term Capital Gains (STCG)**: Holding period ≤ 12 months\n  - Tax: 20% on gains\n\n\n\n### Redemption Process\n\n1. Log in to your Groww account\n2. Navigate to your mutual fund holdings\n3. Select the scheme and click \"Redeem\"\n4. Choose redemption amount (units or value)\n5. Submit the request\n\nRedemption proceeds are typically credited to your bank account within 3-4 business days.",
+    "content_csv": "",
+    "fields_json": {
+      "lock_in_years": 0,
+      "lock_in_text": "No lock-in",
+      "tax_benefit_80c": false,
+      "tax_notes": "Equity funds: LTCG taxed at 12.5% above ₹1.25L per year, STCG at 20%."
+    },
+    "hash": "9300bbf3e41fbd2290e666ff2cd1a2f4a1ccde0aab6adb4e63b944802a061325"
+  },
+  "hdfc-equity-fund-direct-growth__facts_performance": {
+    "chunk_id": "hdfc-equity-fund-direct-growth__facts_performance",
+    "scheme_id": "hdfc-equity-fund-direct-growth",
+    "scheme_display_name": "HDFC Flexi Cap Direct Plan Growth",
+    "section_type": "facts_performance",
+    "source_url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+    "fetched_at": "2025-11-16T09:13:37.930Z",
+    "content_md": "# HDFC Flexi Cap Direct Plan Growth\n\n## Key Facts\n\n- **NAV**: ₹2,263.97 (as of 14 Nov 2025)\n- **Category**: Equity Flexi Cap\n- **Risk Level**: Very High Risk\n- **Minimum SIP**: ₹100\n- **Fund Size (AUM)**: ₹91,041.00 Cr\n- **Expense Ratio**: 0.67%\n- **Rating**: 5/5\n- **Lock-in Period**: No lock-in\n\n## Returns\n\n- **1 Year**: 12.9%\n- **3 Year (Annualized)**: 22.4%\n- **5 Year (Annualized)**: 27.4%",
+    "content_csv": "",
+    "fields_json": {
+      "nav": 2263.97,
+      "nav_date": "14 Nov 2025",
+      "category": "Equity Flexi Cap",
+      "minimum_sip": 100,
+      "fund_size": "91,041.00 Cr",
+      "expense_ratio": 0.67,
+      "rating": 5,
+      "returns_1y": 12.9,
+      "returns_3y": 22.4,
+      "returns_5y": 27.4
+    },
+    "hash": "234dc2ea2f5cd4250f7be60ba0a4213fb182e9657e26c572b931a8924aed3809"
+  },
+  "hdfc-equity-fund-direct-growth__fees": {
+    "chunk_id": "hdfc-equity-fund-direct-growth__fees",
+    "scheme_id": "hdfc-equity-fund-direct-growth",
+    "scheme_display_name": "HDFC Flexi Cap Direct Plan Growth",
+    "section_type": "fees",
+    "source_url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+    "fetched_at": "2025-11-16T09:13:37.930Z",
+    "content_md": "## Fees & Charges\n\n- **Total Expense Ratio (TER)**: 0.67%\n- **Exit Load**: 1% if redeemed within 1 year from the date of allotment\n- **Stamp Duty**: 0.005% on purchase (as per SEBI regulations)\n\n### Exit Load Details\n\n1% if redeemed within 1 year from the date of allotment",
+    "content_csv": "",
+    "fields_json": {
+      "ter_percent": 0.67,
+      "exit_load_text": "1% if redeemed within 1 year from the date of allotment",
+      "exit_load_rules": []
+    },
+    "hash": "54b6197804817d7fe5b766fae58984732cd776c789b70f8dca89445b0fe03799"
+  },
+  "hdfc-equity-fund-direct-growth__riskometer_benchmark": {
+    "chunk_id": "hdfc-equity-fund-direct-growth__riskometer_benchmark",
+    "scheme_id": "hdfc-equity-fund-direct-growth",
+    "scheme_display_name": "HDFC Flexi Cap Direct Plan Growth",
+    "section_type": "riskometer_benchmark",
+    "source_url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+    "fetched_at": "2025-11-16T09:13:37.930Z",
+    "content_md": "## Risk & Benchmark\n\n- **Risk Level**: Very High Risk\n- **Category**: Equity Flexi Cap\n\nThe riskometer indicates the level of risk associated with this mutual fund scheme.",
+    "content_csv": "",
+    "fields_json": {
+      "riskometer_category": "Very High Risk",
+      "category": "Equity Flexi Cap"
+    },
+    "hash": "334ecf640def08ab10ba288a942557ae54ec5e37ccfa23d2a332919505adac4c"
+  },
+  "hdfc-equity-fund-direct-growth__tax_redemption": {
+    "chunk_id": "hdfc-equity-fund-direct-growth__tax_redemption",
+    "scheme_id": "hdfc-equity-fund-direct-growth",
+    "scheme_display_name": "HDFC Flexi Cap Direct Plan Growth",
+    "section_type": "tax_redemption",
+    "source_url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+    "fetched_at": "2025-11-16T09:13:37.930Z",
+    "content_md": "## Tax & Redemption\n\n- **Lock-in Period**: No lock-in\n\n\n### Taxation\n\n**Equity Funds Tax Rules:**\n- **Long-term Capital Gains (LTCG)**: Holding period > 12 months\n  - Tax: 12.5% on gains above ₹1.25 lakh per year\n- **Short-term Capital Gains (STCG)**: Holding period ≤ 12 months\n  - Tax: 20% on gains\n\n\n\n### Redemption Process\n\n1. Log in to your Groww account\n2. Navigate to your mutual fund holdings\n3. Select the scheme and click \"Redeem\"\n4. Choose redemption amount (units or value)\n5. Submit the request\n\nRedemption proceeds are typically credited to your bank account within 3-4 business days.",
+    "content_csv": "",
+    "fields_json": {
+      "lock_in_years": 0,
+      "lock_in_text": "No lock-in",
+      "tax_benefit_80c": false,
+      "tax_notes": "Equity funds: LTCG taxed at 12.5% above ₹1.25L per year, STCG at 20%."
+    },
+    "hash": "9300bbf3e41fbd2290e666ff2cd1a2f4a1ccde0aab6adb4e63b944802a061325"
+  },
+  "hdfc-elss-tax-saver-fund-direct-plan-growth__facts_performance": {
+    "chunk_id": "hdfc-elss-tax-saver-fund-direct-plan-growth__facts_performance",
+    "scheme_id": "hdfc-elss-tax-saver-fund-direct-plan-growth",
+    "scheme_display_name": "HDFC ELSS Tax Saver Fund Direct Plan Growth",
+    "section_type": "facts_performance",
+    "source_url": "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth",
+    "fetched_at": "2025-11-16T09:13:37.930Z",
+    "content_md": "# HDFC ELSS Tax Saver Fund Direct Plan Growth\n\n## Key Facts\n\n- **NAV**: ₹1,574.10 (as of 14 Nov 2025)\n- **Category**: Equity ELSS\n- **Risk Level**: Very High Risk\n- **Minimum SIP**: ₹500\n- **Fund Size (AUM)**: ₹17,194.16 Cr\n- **Expense Ratio**: 1.08%\n- **Rating**: 5/5\n- **Lock-in Period**: 3 years (ELSS - mandatory lock-in)\n\n## Returns\n\n- **1 Year**: 11.6%\n- **3 Year (Annualized)**: 21.8%\n- **5 Year (Annualized)**: 24.8%",
+    "content_csv": "",
+    "fields_json": {
+      "nav": 1574.1,
+      "nav_date": "14 Nov 2025",
+      "category": "Equity ELSS",
+      "minimum_sip": 500,
+      "fund_size": "17,194.16 Cr",
+      "expense_ratio": 1.08,
+      "rating": 5,
+      "returns_1y": 11.6,
+      "returns_3y": 21.8,
+      "returns_5y": 24.8
+    },
+    "hash": "c8f0f613ea77dc80779bd457d9fcc6fb03d7e4d3ab90b94fa32ad2199b0603d0"
+  },
+  "hdfc-elss-tax-saver-fund-direct-plan-growth__fees": {
+    "chunk_id": "hdfc-elss-tax-saver-fund-direct-plan-growth__fees",
+    "scheme_id": "hdfc-elss-tax-saver-fund-direct-plan-growth",
+    "scheme_display_name": "HDFC ELSS Tax Saver Fund Direct Plan Growth",
+    "section_type": "fees",
+    "source_url": "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth",
+    "fetched_at": "2025-11-16T09:13:37.930Z",
+    "content_md": "## Fees & Charges\n\n- **Total Expense Ratio (TER)**: 1.08%\n- **Exit Load**: No exit load (3 year mandatory lock-in applies)\n- **Stamp Duty**: 0.005% on purchase (as per SEBI regulations)\n\n### Exit Load Details\n\nNo exit load (3 year mandatory lock-in applies)",
+    "content_csv": "",
+    "fields_json": {
+      "ter_percent": 1.08,
+      "exit_load_text": "No exit load (3 year mandatory lock-in applies)",
+      "exit_load_rules": [
+        {
+          "condition": "Any time",
+          "rate": 0
+        }
+      ]
+    },
+    "hash": "eb5b3ba0d32a0ea034c99b808f0c57cddd9340de230c6658b85e85ec7f27687c"
+  },
+  "hdfc-elss-tax-saver-fund-direct-plan-growth__riskometer_benchmark": {
+    "chunk_id": "hdfc-elss-tax-saver-fund-direct-plan-growth__riskometer_benchmark",
+    "scheme_id": "hdfc-elss-tax-saver-fund-direct-plan-growth",
+    "scheme_display_name": "HDFC ELSS Tax Saver Fund Direct Plan Growth",
+    "section_type": "riskometer_benchmark",
+    "source_url": "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth",
+    "fetched_at": "2025-11-16T09:13:37.930Z",
+    "content_md": "## Risk & Benchmark\n\n- **Risk Level**: Very High Risk\n- **Category**: Equity ELSS\n\nThe riskometer indicates the level of risk associated with this mutual fund scheme.",
+    "content_csv": "",
+    "fields_json": {
+      "riskometer_category": "Very High Risk",
+      "category": "Equity ELSS"
+    },
+    "hash": "7490df3dbecf134845758364efe8ce4ee76196cfefb5e9fd84da486ee0adba08"
+  },
+  "hdfc-elss-tax-saver-fund-direct-plan-growth__tax_redemption": {
+    "chunk_id": "hdfc-elss-tax-saver-fund-direct-plan-growth__tax_redemption",
+    "scheme_id": "hdfc-elss-tax-saver-fund-direct-plan-growth",
+    "scheme_display_name": "HDFC ELSS Tax Saver Fund Direct Plan Growth",
+    "section_type": "tax_redemption",
+    "source_url": "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth",
+    "fetched_at": "2025-11-16T09:13:37.930Z",
+    "content_md": "## Tax & Redemption\n\n- **Lock-in Period**: 3 years (ELSS - mandatory lock-in)\n- **Tax Benefit**: Eligible for deduction under Section 80C up to ₹1.5 lakh per financial year\n\n\n### Taxation\n\n**Equity Funds Tax Rules:**\n- **Long-term Capital Gains (LTCG)**: Holding period > 12 months\n  - Tax: 12.5% on gains above ₹1.25 lakh per year\n- **Short-term Capital Gains (STCG)**: Holding period ≤ 12 months\n  - Tax: 20% on gains\n\n\n**Note**: For ELSS funds, the 3-year lock-in period applies from the date of each SIP installment or lump sum investment.\n\n### Redemption Process\n\n1. Log in to your Groww account\n2. Navigate to your mutual fund holdings\n3. Select the scheme and click \"Redeem\"\n4. Choose redemption amount (units or value)\n5. Submit the request\n\nRedemption proceeds are typically credited to your bank account within 3-4 business days.",
+    "content_csv": "",
+    "fields_json": {
+      "lock_in_years": 3,
+      "lock_in_text": "3 years (ELSS - mandatory lock-in)",
+      "tax_benefit_80c": true,
+      "tax_notes": "ELSS funds offer tax deduction under Section 80C. LTCG taxed at 12.5% above ₹1.25L, STCG at 20%."
+    },
+    "hash": "f40c37787936c523aa3a089feb9317efc87872cd3414f4b8272181e97939efdd"
+  },
+  "regulatory-and-other-information__regulatory_links": {
+    "chunk_id": "regulatory-and-other-information__regulatory_links",
+    "scheme_id": "regulatory-and-other-information",
+    "scheme_display_name": "Regulatory and Other Information",
+    "section_type": "regulatory_links",
+    "source_url": "https://groww.in/regulatory-and-other-information",
+    "fetched_at": "2025-11-16T09:13:37.930Z",
+    "content_md": "# Regulatory and Other Information\n\nThis page contains important regulatory information, disclosures, and official documents related to mutual fund investing on Groww.\n\n## Key Information\n\n- **Platform**: Groww (Nextbillion Technology Pvt. Ltd.)\n- **SEBI Registration**: Registered with SEBI as a mutual fund distributor\n- **Compliance**: All mutual fund transactions comply with SEBI regulations\n\n## Official Documents\n\nFor scheme-specific documents (Scheme Information Document, Key Information Memorandum, etc.), please visit the individual fund pages.\n\n## Contact\n\nGroww  \nVaishnavi Tech Park, South Tower, 3rd Floor  \nSarjapur Main Road, Bellandur  \nBengaluru – 560103, Karnataka\n\nFor support, use the \"Help & Support\" section on Groww.",
+    "content_csv": "",
+    "fields_json": {
+      "links": []
+    },
+    "hash": "d860b176567980b1a7f9e1a8120fc4ddebd1823ff883d915d16334d10b7759be"
+  },
+  "download-forms__downloads": {
+    "chunk_id": "download-forms__downloads",
+    "scheme_id": "download-forms",
+    "scheme_display_name": "Download Forms and Statements",
+    "section_type": "downloads",
+    "source_url": "https://groww.in/download-forms",
+    "fetched_at": "2025-11-16T09:13:37.931Z",
+    "content_md": "# Download Forms and Statements\n\n## Account Modification Forms\n\n- Dematerialization Request Form\n- Rematerialisation Request Form\n- MF Destatementisation Form\n- MF Restatementisation Form\n- Repurchase and Redemption Form\n- DIS Requisition Form\n- Transmission cum Dematerialisation Form\n- Transmission Request Form\n- Freeze / Unfreeze Request Form\n- Pledge Request Form\n- Unpledge Request Form\n- Demat Debit and Pledge Instruction Authorisation Form\n- KYC Modification Form\n- Nomination Form\n- Equity Demat & Trading Account Closure Form\n\n## Annexures\n\n- Risk Disclosure Document as prescribed by SEBI\n- BSE Vernacular Language\n- NSE Vernacular Language\n\n## Checklist\n\n- Document Checklist for Modifications\n\n## How to Download Your Mutual Fund Statement\n\n1. **Log in** to your Groww account\n2. Go to the **Mutual Funds** section\n3. Click on **\"Track\"** or your **portfolio**\n4. Select the fund for which you need a statement\n5. Click on **\"Download Statement\"** or similar option\n6. Choose the date range and format (PDF/Excel)\n7. Download and save the file\n\nAlternatively, mutual fund statements (Consolidated Account Statement - CAS) are sent to your registered email monthly by CAMS/Karvy.\n\n## Support\n\nFor any assistance with forms or downloads, contact Groww customer support through the Help & Support section.",
+    "content_csv": "",
+    "fields_json": {
+      "links": [],
+      "forms": [
+        "Dematerialization Request Form",
+        "KYC Modification Form",
+        "Nomination Form",
+        "Redemption Form"
+      ]
+    },
+    "hash": "c2987cecc30117ec362fcfe29ac4686b6710688495e63610f4c3975a91c572a1"
+  }
+}

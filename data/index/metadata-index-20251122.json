@@ -1,0 +1,440 @@
+{
+  "by_scheme": {
+    "hdfc-mid-cap-fund-direct-growth": [
+      "hdfc-mid-cap-fund-direct-growth__facts_performance",
+      "hdfc-mid-cap-fund-direct-growth__fees",
+      "hdfc-mid-cap-fund-direct-growth__riskometer_benchmark",
+      "hdfc-mid-cap-fund-direct-growth__tax_redemption",
+      "hdfc-mid-cap-fund-direct-growth__fund_manager",
+      "hdfc-mid-cap-fund-direct-growth__portfolio_holdings"
+    ],
+    "hdfc-large-cap-fund-direct-growth": [
+      "hdfc-large-cap-fund-direct-growth__facts_performance",
+      "hdfc-large-cap-fund-direct-growth__fees",
+      "hdfc-large-cap-fund-direct-growth__riskometer_benchmark",
+      "hdfc-large-cap-fund-direct-growth__tax_redemption",
+      "hdfc-large-cap-fund-direct-growth__fund_manager",
+      "hdfc-large-cap-fund-direct-growth__portfolio_holdings"
+    ],
+    "hdfc-small-cap-fund-direct-growth": [
+      "hdfc-small-cap-fund-direct-growth__facts_performance",
+      "hdfc-small-cap-fund-direct-growth__fees",
+      "hdfc-small-cap-fund-direct-growth__riskometer_benchmark",
+      "hdfc-small-cap-fund-direct-growth__tax_redemption",
+      "hdfc-small-cap-fund-direct-growth__fund_manager",
+      "hdfc-small-cap-fund-direct-growth__portfolio_holdings"
+    ],
+    "hdfc-equity-fund-direct-growth": [
+      "hdfc-equity-fund-direct-growth__facts_performance",
+      "hdfc-equity-fund-direct-growth__fees",
+      "hdfc-equity-fund-direct-growth__riskometer_benchmark",
+      "hdfc-equity-fund-direct-growth__tax_redemption",
+      "hdfc-equity-fund-direct-growth__fund_manager",
+      "hdfc-equity-fund-direct-growth__portfolio_holdings"
+    ],
+    "hdfc-elss-tax-saver-fund-direct-plan-growth": [
+      "hdfc-elss-tax-saver-fund-direct-plan-growth__facts_performance",
+      "hdfc-elss-tax-saver-fund-direct-plan-growth__fees",
+      "hdfc-elss-tax-saver-fund-direct-plan-growth__riskometer_benchmark",
+      "hdfc-elss-tax-saver-fund-direct-plan-growth__tax_redemption",
+      "hdfc-elss-tax-saver-fund-direct-plan-growth__fund_manager",
+      "hdfc-elss-tax-saver-fund-direct-plan-growth__portfolio_holdings"
+    ],
+    "regulatory-and-other-information": [
+      "regulatory-and-other-information__regulatory_links"
+    ],
+    "download-forms": [
+      "download-forms__downloads"
+    ]
+  },
+  "by_section": {
+    "facts_performance": [
+      "hdfc-mid-cap-fund-direct-growth__facts_performance",
+      "hdfc-large-cap-fund-direct-growth__facts_performance",
+      "hdfc-small-cap-fund-direct-growth__facts_performance",
+      "hdfc-equity-fund-direct-growth__facts_performance",
+      "hdfc-elss-tax-saver-fund-direct-plan-growth__facts_performance"
+    ],
+    "fees": [
+      "hdfc-mid-cap-fund-direct-growth__fees",
+      "hdfc-large-cap-fund-direct-growth__fees",
+      "hdfc-small-cap-fund-direct-growth__fees",
+      "hdfc-equity-fund-direct-growth__fees",
+      "hdfc-elss-tax-saver-fund-direct-plan-growth__fees"
+    ],
+    "riskometer_benchmark": [
+      "hdfc-mid-cap-fund-direct-growth__riskometer_benchmark",
+      "hdfc-large-cap-fund-direct-growth__riskometer_benchmark",
+      "hdfc-small-cap-fund-direct-growth__riskometer_benchmark",
+      "hdfc-equity-fund-direct-growth__riskometer_benchmark",
+      "hdfc-elss-tax-saver-fund-direct-plan-growth__riskometer_benchmark"
+    ],
+    "tax_redemption": [
+      "hdfc-mid-cap-fund-direct-growth__tax_redemption",
+      "hdfc-large-cap-fund-direct-growth__tax_redemption",
+      "hdfc-small-cap-fund-direct-growth__tax_redemption",
+      "hdfc-equity-fund-direct-growth__tax_redemption",
+      "hdfc-elss-tax-saver-fund-direct-plan-growth__tax_redemption"
+    ],
+    "fund_manager": [
+      "hdfc-mid-cap-fund-direct-growth__fund_manager",
+      "hdfc-large-cap-fund-direct-growth__fund_manager",
+      "hdfc-small-cap-fund-direct-growth__fund_manager",
+      "hdfc-equity-fund-direct-growth__fund_manager",
+      "hdfc-elss-tax-saver-fund-direct-plan-growth__fund_manager"
+    ],
+    "portfolio_holdings": [
+      "hdfc-mid-cap-fund-direct-growth__portfolio_holdings",
+      "hdfc-large-cap-fund-direct-growth__portfolio_holdings",
+      "hdfc-small-cap-fund-direct-growth__portfolio_holdings",
+      "hdfc-equity-fund-direct-growth__portfolio_holdings",
+      "hdfc-elss-tax-saver-fund-direct-plan-growth__portfolio_holdings"
+    ],
+    "regulatory_links": [
+      "regulatory-and-other-information__regulatory_links"
+    ],
+    "downloads": [
+      "download-forms__downloads"
+    ]
+  },
+  "by_field": {
+    "nav": {
+      "224.35": [
+        "hdfc-mid-cap-fund-direct-growth__facts_performance"
+      ],
+      "1268.6": [
+        "hdfc-large-cap-fund-direct-growth__facts_performance"
+      ],
+      "162.41": [
+        "hdfc-small-cap-fund-direct-growth__facts_performance"
+      ],
+      "2263.97": [
+        "hdfc-equity-fund-direct-growth__facts_performance"
+      ],
+      "1574.1": [
+        "hdfc-elss-tax-saver-fund-direct-plan-growth__facts_performance"
+      ]
+    },
+    "nav_date": {
+      "14 Nov 2025": [
+        "hdfc-mid-cap-fund-direct-growth__facts_performance",
+        "hdfc-large-cap-fund-direct-growth__facts_performance",
+        "hdfc-small-cap-fund-direct-growth__facts_performance",
+        "hdfc-equity-fund-direct-growth__facts_performance",
+        "hdfc-elss-tax-saver-fund-direct-plan-growth__facts_performance"
+      ]
+    },
+    "category": {
+      "Equity Mid Cap": [
+        "hdfc-mid-cap-fund-direct-growth__facts_performance",
+        "hdfc-mid-cap-fund-direct-growth__riskometer_benchmark"
+      ],
+      "Equity Large Cap": [
+        "hdfc-large-cap-fund-direct-growth__facts_performance",
+        "hdfc-large-cap-fund-direct-growth__riskometer_benchmark"
+      ],
+      "Equity Small Cap": [
+        "hdfc-small-cap-fund-direct-growth__facts_performance",
+        "hdfc-small-cap-fund-direct-growth__riskometer_benchmark"
+      ],
+      "Equity Flexi Cap": [
+        "hdfc-equity-fund-direct-growth__facts_performance",
+        "hdfc-equity-fund-direct-growth__riskometer_benchmark"
+      ],
+      "Equity ELSS": [
+        "hdfc-elss-tax-saver-fund-direct-plan-growth__facts_performance",
+        "hdfc-elss-tax-saver-fund-direct-plan-growth__riskometer_benchmark"
+      ]
+    },
+    "minimum_sip": {
+      "100": [
+        "hdfc-mid-cap-fund-direct-growth__facts_performance",
+        "hdfc-large-cap-fund-direct-growth__facts_performance",
+        "hdfc-small-cap-fund-direct-growth__facts_performance",
+        "hdfc-equity-fund-direct-growth__facts_performance"
+      ],
+      "500": [
+        "hdfc-elss-tax-saver-fund-direct-plan-growth__facts_performance"
+      ]
+    },
+    "fund_size": {
+      "89,383.23 Cr": [
+        "hdfc-mid-cap-fund-direct-growth__facts_performance"
+      ],
+      "39,779.26 Cr": [
+        "hdfc-large-cap-fund-direct-growth__facts_performance"
+      ],
+      "38,412.10 Cr": [
+        "hdfc-small-cap-fund-direct-growth__facts_performance"
+      ],
+      "91,041.00 Cr": [
+        "hdfc-equity-fund-direct-growth__facts_performance"
+      ],
+      "17,194.16 Cr": [
+        "hdfc-elss-tax-saver-fund-direct-plan-growth__facts_performance"
+      ]
+    },
+    "expense_ratio": {
+      "0.71": [
+        "hdfc-mid-cap-fund-direct-growth__facts_performance"
+      ],
+      "0.97": [
+        "hdfc-large-cap-fund-direct-growth__facts_performance"
+      ],
+      "0.82": [
+        "hdfc-small-cap-fund-direct-growth__facts_performance"
+      ],
+      "0.67": [
+        "hdfc-equity-fund-direct-growth__facts_performance"
+      ],
+      "1.08": [
+        "hdfc-elss-tax-saver-fund-direct-plan-growth__facts_performance"
+      ]
+    },
+    "rating": {
+      "4": [
+        "hdfc-small-cap-fund-direct-growth__facts_performance"
+      ],
+      "5": [
+        "hdfc-mid-cap-fund-direct-growth__facts_performance",
+        "hdfc-large-cap-fund-direct-growth__facts_performance",
+        "hdfc-equity-fund-direct-growth__facts_performance",
+        "hdfc-elss-tax-saver-fund-direct-plan-growth__facts_performance"
+      ]
+    },
+    "returns_1y": {
+      "12.5": [
+        "hdfc-mid-cap-fund-direct-growth__facts_performance"
+      ],
+      "8.2": [
+        "hdfc-large-cap-fund-direct-growth__facts_performance"
+      ],
+      "7.1": [
+        "hdfc-small-cap-fund-direct-growth__facts_performance"
+      ],
+      "12.9": [
+        "hdfc-equity-fund-direct-growth__facts_performance"
+      ],
+      "11.6": [
+        "hdfc-elss-tax-saver-fund-direct-plan-growth__facts_performance"
+      ]
+    },
+    "returns_3y": {
+      "27": [
+        "hdfc-mid-cap-fund-direct-growth__facts_performance"
+      ],
+      "16.4": [
+        "hdfc-large-cap-fund-direct-growth__facts_performance"
+      ],
+      "23.2": [
+        "hdfc-small-cap-fund-direct-growth__facts_performance"
+      ],
+      "22.4": [
+        "hdfc-equity-fund-direct-growth__facts_performance"
+      ],
+      "21.8": [
+        "hdfc-elss-tax-saver-fund-direct-plan-growth__facts_performance"
+      ]
+    },
+    "returns_5y": {
+      "30": [
+        "hdfc-small-cap-fund-direct-growth__facts_performance"
+      ],
+      "29.2": [
+        "hdfc-mid-cap-fund-direct-growth__facts_performance"
+      ],
+      "20.2": [
+        "hdfc-large-cap-fund-direct-growth__facts_performance"
+      ],
+      "27.4": [
+        "hdfc-equity-fund-direct-growth__facts_performance"
+      ],
+      "24.8": [
+        "hdfc-elss-tax-saver-fund-direct-plan-growth__facts_performance"
+      ]
+    },
+    "ter_percent": {
+      "0.71": [
+        "hdfc-mid-cap-fund-direct-growth__fees"
+      ],
+      "0.97": [
+        "hdfc-large-cap-fund-direct-growth__fees"
+      ],
+      "0.82": [
+        "hdfc-small-cap-fund-direct-growth__fees"
+      ],
+      "0.67": [
+        "hdfc-equity-fund-direct-growth__fees"
+      ],
+      "1.08": [
+        "hdfc-elss-tax-saver-fund-direct-plan-growth__fees"
+      ]
+    },
+    "exit_load_text": {
+      "1% if redeemed within 1 year from the date of allotment": [
+        "hdfc-mid-cap-fund-direct-growth__fees",
+        "hdfc-large-cap-fund-direct-growth__fees",
+        "hdfc-small-cap-fund-direct-growth__fees",
+        "hdfc-equity-fund-direct-growth__fees"
+      ],
+      "No exit load (3 year mandatory lock-in applies)": [
+        "hdfc-elss-tax-saver-fund-direct-plan-growth__fees"
+      ]
+    },
+    "exit_load_rules": {
+      "": [
+        "hdfc-mid-cap-fund-direct-growth__fees",
+        "hdfc-large-cap-fund-direct-growth__fees",
+        "hdfc-small-cap-fund-direct-growth__fees",
+        "hdfc-equity-fund-direct-growth__fees"
+      ],
+      "[object Object]": [
+        "hdfc-elss-tax-saver-fund-direct-plan-growth__fees"
+      ]
+    },
+    "riskometer_category": {
+      "Very High Risk": [
+        "hdfc-mid-cap-fund-direct-growth__riskometer_benchmark",
+        "hdfc-large-cap-fund-direct-growth__riskometer_benchmark",
+        "hdfc-small-cap-fund-direct-growth__riskometer_benchmark",
+        "hdfc-equity-fund-direct-growth__riskometer_benchmark",
+        "hdfc-elss-tax-saver-fund-direct-plan-growth__riskometer_benchmark"
+      ]
+    },
+    "lock_in_years": {
+      "0": [
+        "hdfc-mid-cap-fund-direct-growth__tax_redemption",
+        "hdfc-large-cap-fund-direct-growth__tax_redemption",
+        "hdfc-small-cap-fund-direct-growth__tax_redemption",
+        "hdfc-equity-fund-direct-growth__tax_redemption"
+      ],
+      "3": [
+        "hdfc-elss-tax-saver-fund-direct-plan-growth__tax_redemption"
+      ]
+    },
+    "lock_in_text": {
+      "No lock-in": [
+        "hdfc-mid-cap-fund-direct-growth__tax_redemption",
+        "hdfc-large-cap-fund-direct-growth__tax_redemption",
+        "hdfc-small-cap-fund-direct-growth__tax_redemption",
+        "hdfc-equity-fund-direct-growth__tax_redemption"
+      ],
+      "3 years (ELSS - mandatory lock-in)": [
+        "hdfc-elss-tax-saver-fund-direct-plan-growth__tax_redemption"
+      ]
+    },
+    "tax_benefit_80c": {
+      "false": [
+        "hdfc-mid-cap-fund-direct-growth__tax_redemption",
+        "hdfc-large-cap-fund-direct-growth__tax_redemption",
+        "hdfc-small-cap-fund-direct-growth__tax_redemption",
+        "hdfc-equity-fund-direct-growth__tax_redemption"
+      ],
+      "true": [
+        "hdfc-elss-tax-saver-fund-direct-plan-growth__tax_redemption"
+      ]
+    },
+    "tax_notes": {
+      "Equity funds: LTCG taxed at 12.5% above ₹1.25L per year, STCG at 20%.": [
+        "hdfc-mid-cap-fund-direct-growth__tax_redemption",
+        "hdfc-large-cap-fund-direct-growth__tax_redemption",
+        "hdfc-small-cap-fund-direct-growth__tax_redemption",
+        "hdfc-equity-fund-direct-growth__tax_redemption"
+      ],
+      "ELSS funds offer tax deduction under Section 80C. LTCG taxed at 12.5% above ₹1.25L, STCG at 20%.": [
+        "hdfc-elss-tax-saver-fund-direct-plan-growth__tax_redemption"
+      ]
+    },
+    "manager_name": {
+      "Chirag Setalvad and Dhruv Muchhal": [
+        "hdfc-mid-cap-fund-direct-growth__fund_manager"
+      ],
+      "Roshi Jain": [
+        "hdfc-large-cap-fund-direct-growth__fund_manager",
+        "hdfc-equity-fund-direct-growth__fund_manager"
+      ],
+      "Chirag Setalvad": [
+        "hdfc-small-cap-fund-direct-growth__fund_manager",
+        "hdfc-elss-tax-saver-fund-direct-plan-growth__fund_manager"
+      ]
+    },
+    "manager_education": {
+      "Chirag Setalvad is a CA and CFA charterholder. Dhruv Muchhal holds an MBA.": [
+        "hdfc-mid-cap-fund-direct-growth__fund_manager"
+      ],
+      "B.Com, CA, CFA charterholder": [
+        "hdfc-large-cap-fund-direct-growth__fund_manager",
+        "hdfc-equity-fund-direct-growth__fund_manager"
+      ],
+      "CA, CFA charterholder": [
+        "hdfc-small-cap-fund-direct-growth__fund_manager",
+        "hdfc-elss-tax-saver-fund-direct-plan-growth__fund_manager"
+      ]
+    },
+    "manager_experience": {
+      "Combined experience of over 20 years in equity research and fund management.": [
+        "hdfc-mid-cap-fund-direct-growth__fund_manager"
+      ],
+      "Over 15 years of experience in equity research and portfolio management.": [
+        "hdfc-large-cap-fund-direct-growth__fund_manager"
+      ],
+      "Over 15 years of experience in equity research and fund management with HDFC AMC.": [
+        "hdfc-small-cap-fund-direct-growth__fund_manager"
+      ],
+      "Over 15 years of experience managing large cap and multi-cap funds.": [
+        "hdfc-equity-fund-direct-growth__fund_manager"
+      ],
+      "Over 15 years of experience in equity research and fund management.": [
+        "hdfc-elss-tax-saver-fund-direct-plan-growth__fund_manager"
+      ]
+    },
+    "table_headers": {
+      "Name,Sector,Instrument,Assets": [
+        "hdfc-mid-cap-fund-direct-growth__portfolio_holdings",
+        "hdfc-large-cap-fund-direct-growth__portfolio_holdings",
+        "hdfc-small-cap-fund-direct-growth__portfolio_holdings",
+        "hdfc-equity-fund-direct-growth__portfolio_holdings",
+        "hdfc-elss-tax-saver-fund-direct-plan-growth__portfolio_holdings"
+      ]
+    },
+    "row_count": {
+      "10": [
+        "hdfc-mid-cap-fund-direct-growth__portfolio_holdings",
+        "hdfc-large-cap-fund-direct-growth__portfolio_holdings",
+        "hdfc-small-cap-fund-direct-growth__portfolio_holdings",
+        "hdfc-equity-fund-direct-growth__portfolio_holdings",
+        "hdfc-elss-tax-saver-fund-direct-plan-growth__portfolio_holdings"
+      ]
+    },
+    "links": {
+      "": [
+        "regulatory-and-other-information__regulatory_links",
+        "download-forms__downloads"
+      ]
+    },
+    "forms": {
+      "Dematerialization Request Form,KYC Modification Form,Nomination Form,Redemption Form": [
+        "download-forms__downloads"
+      ]
+    }
+  },
+  "all_schemes": [
+    "hdfc-mid-cap-fund-direct-growth",
+    "hdfc-large-cap-fund-direct-growth",
+    "hdfc-small-cap-fund-direct-growth",
+    "hdfc-equity-fund-direct-growth",
+    "hdfc-elss-tax-saver-fund-direct-plan-growth",
+    "regulatory-and-other-information",
+    "download-forms"
+  ],
+  "all_sections": [
+    "facts_performance",
+    "fees",
+    "riskometer_benchmark",
+    "tax_redemption",
+    "fund_manager",
+    "portfolio_holdings",
+    "regulatory_links",
+    "downloads"
+  ]
+}

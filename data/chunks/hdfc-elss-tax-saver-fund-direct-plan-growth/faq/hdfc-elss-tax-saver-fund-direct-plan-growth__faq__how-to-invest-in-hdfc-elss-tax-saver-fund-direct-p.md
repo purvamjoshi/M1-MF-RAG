@@ -1,0 +1,5 @@
+## FAQ
+
+**Q: How to Invest in HDFC ELSS Tax Saver Fund Direct Plan Growth?You can easily invest in HDFC ELSS Tax Saver Fund Direct Plan Growth in a hassle-free manner on Groww. The process is extremely simple, quick and completely paperless. Invest in a few minutes with the following steps: Log on to your Groww account Search for HDFC ELSS Tax Saver Fund Direct Plan Growth from the search box In order to invest, you will have to complete all the KYC formalities which are completely online and paperless and take a few minutes to complete Once you are done with that, you can start investing in HDFC ELSS Tax Saver Fund Direct Plan Growth as SIP or lumpsum as per your investment objective and risk tolerance**
+
+What kind of returns does HDFC ELSS Tax Saver Fund Direct Plan Growth provide?The HDFC ELSS Tax Saver Fund Direct Plan Growth has been there from 01 Jan 2013 and the average annual returns provided by this fund is 12.21% since its inception.

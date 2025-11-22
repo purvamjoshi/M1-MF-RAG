@@ -1,0 +1,566 @@
+{
+  "generated_at": "2025-11-17T19:05:59.221Z",
+  "total_chunks": 70,
+  "chunks": [
+    {
+      "chunk_id": "hdfc-mid-cap-fund-direct-growth__fund_objective",
+      "scheme_id": "hdfc-mid-cap-fund-direct-growth",
+      "section_type": "fund_objective",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "hash": "cd22f06bda5b2782387444f5ac6006fc6649f04cae43204b60abc6c0cd256624",
+      "fetched_at": "2025-11-17T19:05:08.830Z"
+    },
+    {
+      "chunk_id": "hdfc-mid-cap-fund-direct-growth__fund_manager",
+      "scheme_id": "hdfc-mid-cap-fund-direct-growth",
+      "section_type": "fund_manager",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "hash": "59cc82399d574e175b084bec4083dd09d36aadf9557bf6bdfe20678acdfccc08",
+      "fetched_at": "2025-11-17T19:05:08.830Z"
+    },
+    {
+      "chunk_id": "hdfc-mid-cap-fund-direct-growth__facts_performance",
+      "scheme_id": "hdfc-mid-cap-fund-direct-growth",
+      "section_type": "facts_performance",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "hash": "344ae1116c2b1b7d77f01367236982fcc9c402111fe01fb456ec933cf7e26a96",
+      "fetched_at": "2025-11-17T19:05:08.830Z"
+    },
+    {
+      "chunk_id": "hdfc-mid-cap-fund-direct-growth__portfolio_holdings",
+      "scheme_id": "hdfc-mid-cap-fund-direct-growth",
+      "section_type": "portfolio_holdings",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "hash": "426e4186486b47e2b7cb5563f67f8037e53cf46d9fd15df89b9ae559d4daf109",
+      "fetched_at": "2025-11-17T19:05:08.830Z"
+    },
+    {
+      "chunk_id": "hdfc-mid-cap-fund-direct-growth__portfolio_sectors",
+      "scheme_id": "hdfc-mid-cap-fund-direct-growth",
+      "section_type": "portfolio_sectors",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "hash": "21a9b207de27e00c247209f0a33523eb82f9f90c0f1e57581f8b85f2671736ba",
+      "fetched_at": "2025-11-17T19:05:08.830Z"
+    },
+    {
+      "chunk_id": "hdfc-mid-cap-fund-direct-growth__advance_ratios",
+      "scheme_id": "hdfc-mid-cap-fund-direct-growth",
+      "section_type": "advance_ratios",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "hash": "8f50da7c554faf83037dfea19b1fd20cf313a9a9e87b5b98a63eed167f0318c1",
+      "fetched_at": "2025-11-17T19:05:08.830Z"
+    },
+    {
+      "chunk_id": "hdfc-mid-cap-fund-direct-growth__fees",
+      "scheme_id": "hdfc-mid-cap-fund-direct-growth",
+      "section_type": "fees",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "hash": "8e2a5c8430a82c85cc8eb13fca25ef1a89ab2db4e02486da046f8f5b019b5c54",
+      "fetched_at": "2025-11-17T19:05:08.830Z"
+    },
+    {
+      "chunk_id": "hdfc-mid-cap-fund-direct-growth__riskometer_benchmark",
+      "scheme_id": "hdfc-mid-cap-fund-direct-growth",
+      "section_type": "riskometer_benchmark",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "hash": "f60858bcb28227dd684f4ce815f80886eccf26631333ae8047e868c163564490",
+      "fetched_at": "2025-11-17T19:05:08.830Z"
+    },
+    {
+      "chunk_id": "hdfc-mid-cap-fund-direct-growth__faq__past-expense-ratio-exit-load",
+      "scheme_id": "hdfc-mid-cap-fund-direct-growth",
+      "section_type": "faq",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "hash": "828cfadfe4e088a00a6b97f6cb920a7c81e9454cea89f7316fae04c87c8485a0",
+      "fetched_at": "2025-11-17T19:05:08.830Z"
+    },
+    {
+      "chunk_id": "hdfc-mid-cap-fund-direct-growth__faq__expense-ratio-0-71-",
+      "scheme_id": "hdfc-mid-cap-fund-direct-growth",
+      "section_type": "faq",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "hash": "0cc24fceb988f409609ae2d5b306529855d98f698fc9fb5883bcc510a447a472",
+      "fetched_at": "2025-11-17T19:05:08.830Z"
+    },
+    {
+      "chunk_id": "hdfc-mid-cap-fund-direct-growth__faq__stamp-duty",
+      "scheme_id": "hdfc-mid-cap-fund-direct-growth",
+      "section_type": "faq",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "hash": "37395fa4dbcaa66da2a6b70e9d41346a2f6d6168a51d65f3e2008dc4ad773988",
+      "fetched_at": "2025-11-17T19:05:08.830Z"
+    },
+    {
+      "chunk_id": "hdfc-mid-cap-fund-direct-growth__faq__tax-implication",
+      "scheme_id": "hdfc-mid-cap-fund-direct-growth",
+      "section_type": "faq",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "hash": "33efdee240712e7e643b9cb3a7444e2d9f9cb017ff5a5432ade314a2f07e261a",
+      "fetched_at": "2025-11-17T19:05:08.830Z"
+    },
+    {
+      "chunk_id": "hdfc-mid-cap-fund-direct-growth__faq__how-to-invest-in-hdfc-mid-cap-fund-direct-growth-y",
+      "scheme_id": "hdfc-mid-cap-fund-direct-growth",
+      "section_type": "faq",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "hash": "2ca0b5e75820d4e09685983535f0e72869b48b764ba48f1b716b7920ff5e49ed",
+      "fetched_at": "2025-11-17T19:05:08.830Z"
+    },
+    {
+      "chunk_id": "hdfc-mid-cap-fund-direct-growth__faq__what-kind-of-returns-does-hdfc-mid-cap-fund-direct",
+      "scheme_id": "hdfc-mid-cap-fund-direct-growth",
+      "section_type": "faq",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "hash": "944840366ad1e667f2cfa23bd5162d39e81f278d2a882c9b9db5bac269a414e0",
+      "fetched_at": "2025-11-17T19:05:08.830Z"
+    },
+    {
+      "chunk_id": "hdfc-mid-cap-fund-direct-growth__faq__how-much-expense-ratio-is-charged-by-hdfc-mid-cap-",
+      "scheme_id": "hdfc-mid-cap-fund-direct-growth",
+      "section_type": "faq",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "hash": "cb16e66c0bbd18998f4644b39072259e1c7695c9005fc9e247d7bfaaddf69b58",
+      "fetched_at": "2025-11-17T19:05:08.830Z"
+    },
+    {
+      "chunk_id": "hdfc-mid-cap-fund-direct-growth__faq__what-is-the-aum-of-hdfc-mid-cap-fund-direct-growth",
+      "scheme_id": "hdfc-mid-cap-fund-direct-growth",
+      "section_type": "faq",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "hash": "bd52ef01c6fc40282b288e717f32c703b145756ce28df4c9dc80216e0f0f3e28",
+      "fetched_at": "2025-11-17T19:05:08.830Z"
+    },
+    {
+      "chunk_id": "hdfc-mid-cap-fund-direct-growth__faq__how-to-redeem-hdfc-mid-cap-fund-direct-growth-if-y",
+      "scheme_id": "hdfc-mid-cap-fund-direct-growth",
+      "section_type": "faq",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "hash": "5613eda2a6e085ff8e296fafae4a20153f7e28ef9c04cccf9cc30289400d683e",
+      "fetched_at": "2025-11-17T19:05:08.830Z"
+    },
+    {
+      "chunk_id": "hdfc-mid-cap-fund-direct-growth__faq__can-i-invest-in-sip-and-lump-sum-of-hdfc-mid-cap-f",
+      "scheme_id": "hdfc-mid-cap-fund-direct-growth",
+      "section_type": "faq",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "hash": "2b38e784ee8f8bdfcdbef7b5901c3f702716489ba01c0f25f8629d1a113702ff",
+      "fetched_at": "2025-11-17T19:05:08.830Z"
+    },
+    {
+      "chunk_id": "hdfc-mid-cap-fund-direct-growth__faq__what-is-the-nav-of-hdfc-mid-cap-fund-direct-growth",
+      "scheme_id": "hdfc-mid-cap-fund-direct-growth",
+      "section_type": "faq",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "hash": "37a7d2b7f64b4288938805eb1ae6faba5c296b2abcb89105cd11430b0024bfdc",
+      "fetched_at": "2025-11-17T19:05:08.830Z"
+    },
+    {
+      "chunk_id": "hdfc-mid-cap-fund-direct-growth__tax_redemption",
+      "scheme_id": "hdfc-mid-cap-fund-direct-growth",
+      "section_type": "tax_redemption",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "hash": "aeee0a25406eac5f6bfb57464c133fb3119191744f833a1bb055a869a1ebac06",
+      "fetched_at": "2025-11-17T19:05:08.830Z"
+    },
+    {
+      "chunk_id": "hdfc-mid-cap-fund-direct-growth__contact_details",
+      "scheme_id": "hdfc-mid-cap-fund-direct-growth",
+      "section_type": "contact_details",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "hash": "acb9411ab86a9a5f1eaf2f527c8ba20e4886e6f9640cf60d9228f968d725a0b0",
+      "fetched_at": "2025-11-17T19:05:08.830Z"
+    },
+    {
+      "chunk_id": "hdfc-mid-cap-fund-direct-growth__regulatory_links",
+      "scheme_id": "hdfc-mid-cap-fund-direct-growth",
+      "section_type": "regulatory_links",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "hash": "83e277a98d311583a46622ab6b71695c8f6c9b71862e46b8fa44c2fb1bbb04a7",
+      "fetched_at": "2025-11-17T19:05:08.830Z"
+    },
+    {
+      "chunk_id": "hdfc-large-cap-fund-direct-growth__fund_objective",
+      "scheme_id": "hdfc-large-cap-fund-direct-growth",
+      "section_type": "fund_objective",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "hash": "715c69c12756fba02762da30f0e960f27248e6a7c9465fb6ce0388bf1d7dacdd",
+      "fetched_at": "2025-11-17T19:05:18.755Z"
+    },
+    {
+      "chunk_id": "hdfc-large-cap-fund-direct-growth__fund_manager",
+      "scheme_id": "hdfc-large-cap-fund-direct-growth",
+      "section_type": "fund_manager",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "hash": "e81dc581207fcb308d7823c5edf1f67200ee1bb79f5f25ddf5ec1e9a83476fc4",
+      "fetched_at": "2025-11-17T19:05:18.755Z"
+    },
+    {
+      "chunk_id": "hdfc-large-cap-fund-direct-growth__facts_performance",
+      "scheme_id": "hdfc-large-cap-fund-direct-growth",
+      "section_type": "facts_performance",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "hash": "8c5cbe299f2cbf377d1427085829e9dd333f6910c94035c8e0cdccf68783f740",
+      "fetched_at": "2025-11-17T19:05:18.755Z"
+    },
+    {
+      "chunk_id": "hdfc-large-cap-fund-direct-growth__portfolio_holdings",
+      "scheme_id": "hdfc-large-cap-fund-direct-growth",
+      "section_type": "portfolio_holdings",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "hash": "3a40b713cbaa74c0a18d54a2b9ce2a6c2350879f72a3593266720c71144d2701",
+      "fetched_at": "2025-11-17T19:05:18.755Z"
+    },
+    {
+      "chunk_id": "hdfc-large-cap-fund-direct-growth__portfolio_sectors",
+      "scheme_id": "hdfc-large-cap-fund-direct-growth",
+      "section_type": "portfolio_sectors",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "hash": "160ba919cbfedee61bfdb69c9a38f4507c15eb10d9fe4e4f0a6ce40cad924d16",
+      "fetched_at": "2025-11-17T19:05:18.755Z"
+    },
+    {
+      "chunk_id": "hdfc-large-cap-fund-direct-growth__advance_ratios",
+      "scheme_id": "hdfc-large-cap-fund-direct-growth",
+      "section_type": "advance_ratios",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "hash": "8f50da7c554faf83037dfea19b1fd20cf313a9a9e87b5b98a63eed167f0318c1",
+      "fetched_at": "2025-11-17T19:05:18.755Z"
+    },
+    {
+      "chunk_id": "hdfc-large-cap-fund-direct-growth__fees",
+      "scheme_id": "hdfc-large-cap-fund-direct-growth",
+      "section_type": "fees",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "hash": "8513d2ca947c65527b4476bc98c853747e851fd6ea61ecaf86264f227f60cfc3",
+      "fetched_at": "2025-11-17T19:05:18.755Z"
+    },
+    {
+      "chunk_id": "hdfc-large-cap-fund-direct-growth__riskometer_benchmark",
+      "scheme_id": "hdfc-large-cap-fund-direct-growth",
+      "section_type": "riskometer_benchmark",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "hash": "f60858bcb28227dd684f4ce815f80886eccf26631333ae8047e868c163564490",
+      "fetched_at": "2025-11-17T19:05:18.755Z"
+    },
+    {
+      "chunk_id": "hdfc-large-cap-fund-direct-growth__faq__past-expense-ratio-exit-load",
+      "scheme_id": "hdfc-large-cap-fund-direct-growth",
+      "section_type": "faq",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "hash": "e9c3517c194c984d789c2005fb152c4cc47ef0068859b0ecbddec279a3982a0c",
+      "fetched_at": "2025-11-17T19:05:18.755Z"
+    },
+    {
+      "chunk_id": "hdfc-large-cap-fund-direct-growth__faq__expense-ratio-0-97-",
+      "scheme_id": "hdfc-large-cap-fund-direct-growth",
+      "section_type": "faq",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "hash": "4c33bc00ded8c11e68e700ec0dece19b68e261dcd7f112bf19909a519f0adf68",
+      "fetched_at": "2025-11-17T19:05:18.755Z"
+    },
+    {
+      "chunk_id": "hdfc-large-cap-fund-direct-growth__faq__stamp-duty",
+      "scheme_id": "hdfc-large-cap-fund-direct-growth",
+      "section_type": "faq",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "hash": "37395fa4dbcaa66da2a6b70e9d41346a2f6d6168a51d65f3e2008dc4ad773988",
+      "fetched_at": "2025-11-17T19:05:18.755Z"
+    },
+    {
+      "chunk_id": "hdfc-large-cap-fund-direct-growth__faq__tax-implication",
+      "scheme_id": "hdfc-large-cap-fund-direct-growth",
+      "section_type": "faq",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "hash": "33efdee240712e7e643b9cb3a7444e2d9f9cb017ff5a5432ade314a2f07e261a",
+      "fetched_at": "2025-11-17T19:05:18.755Z"
+    },
+    {
+      "chunk_id": "hdfc-large-cap-fund-direct-growth__faq__how-to-invest-in-hdfc-large-cap-fund-direct-growth",
+      "scheme_id": "hdfc-large-cap-fund-direct-growth",
+      "section_type": "faq",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "hash": "ba208a0cd9a41ea4ea5acc11ce146b726d42baed17f32d9cb919a22097493c4e",
+      "fetched_at": "2025-11-17T19:05:18.755Z"
+    },
+    {
+      "chunk_id": "hdfc-large-cap-fund-direct-growth__faq__what-kind-of-returns-does-hdfc-large-cap-fund-dire",
+      "scheme_id": "hdfc-large-cap-fund-direct-growth",
+      "section_type": "faq",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "hash": "aedce05a81bcf7ea860bdbd18cd8f06b7e962d428c6c5bd0d72c9a25f75b98a0",
+      "fetched_at": "2025-11-17T19:05:18.755Z"
+    },
+    {
+      "chunk_id": "hdfc-large-cap-fund-direct-growth__faq__how-much-expense-ratio-is-charged-by-hdfc-large-ca",
+      "scheme_id": "hdfc-large-cap-fund-direct-growth",
+      "section_type": "faq",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "hash": "4f3a188ca4960dc2f9145e303b927d2364fa9a195a880016ed833b188883e447",
+      "fetched_at": "2025-11-17T19:05:18.755Z"
+    },
+    {
+      "chunk_id": "hdfc-large-cap-fund-direct-growth__faq__what-is-the-aum-of-hdfc-large-cap-fund-direct-grow",
+      "scheme_id": "hdfc-large-cap-fund-direct-growth",
+      "section_type": "faq",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "hash": "b9dadaaa105b8a30b115d248ef0b38632c3453fc51689027fd5484b5e38e9d46",
+      "fetched_at": "2025-11-17T19:05:18.755Z"
+    },
+    {
+      "chunk_id": "hdfc-large-cap-fund-direct-growth__faq__how-to-redeem-hdfc-large-cap-fund-direct-growth-if",
+      "scheme_id": "hdfc-large-cap-fund-direct-growth",
+      "section_type": "faq",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "hash": "24c37c683de8feeaa32ccb4daeda463ab250230281b6dd895cc68d3496ea68fe",
+      "fetched_at": "2025-11-17T19:05:18.755Z"
+    },
+    {
+      "chunk_id": "hdfc-large-cap-fund-direct-growth__faq__can-i-invest-in-sip-and-lump-sum-of-hdfc-large-cap",
+      "scheme_id": "hdfc-large-cap-fund-direct-growth",
+      "section_type": "faq",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "hash": "e1cf678663b68a1feb617abf25a2496d0c98e5815bc510b9aaf86ac0a0ab111d",
+      "fetched_at": "2025-11-17T19:05:18.755Z"
+    },
+    {
+      "chunk_id": "hdfc-large-cap-fund-direct-growth__faq__what-is-the-nav-of-hdfc-large-cap-fund-direct-grow",
+      "scheme_id": "hdfc-large-cap-fund-direct-growth",
+      "section_type": "faq",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "hash": "69ea9a984a2e1846319579913d7f36abceaf0601338a7f671a1ea90fade50df5",
+      "fetched_at": "2025-11-17T19:05:18.755Z"
+    },
+    {
+      "chunk_id": "hdfc-large-cap-fund-direct-growth__tax_redemption",
+      "scheme_id": "hdfc-large-cap-fund-direct-growth",
+      "section_type": "tax_redemption",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "hash": "aeee0a25406eac5f6bfb57464c133fb3119191744f833a1bb055a869a1ebac06",
+      "fetched_at": "2025-11-17T19:05:18.755Z"
+    },
+    {
+      "chunk_id": "hdfc-large-cap-fund-direct-growth__contact_details",
+      "scheme_id": "hdfc-large-cap-fund-direct-growth",
+      "section_type": "contact_details",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "hash": "acb9411ab86a9a5f1eaf2f527c8ba20e4886e6f9640cf60d9228f968d725a0b0",
+      "fetched_at": "2025-11-17T19:05:18.755Z"
+    },
+    {
+      "chunk_id": "hdfc-large-cap-fund-direct-growth__regulatory_links",
+      "scheme_id": "hdfc-large-cap-fund-direct-growth",
+      "section_type": "regulatory_links",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "hash": "83e277a98d311583a46622ab6b71695c8f6c9b71862e46b8fa44c2fb1bbb04a7",
+      "fetched_at": "2025-11-17T19:05:18.755Z"
+    },
+    {
+      "chunk_id": "hdfc-small-cap-fund-direct-growth__fund_objective",
+      "scheme_id": "hdfc-small-cap-fund-direct-growth",
+      "section_type": "fund_objective",
+      "source_url": "https://groww.in/mutual-funds/hdfc-small-cap-fund-direct-growth",
+      "hash": "be1b75bf3379a234d62a34f70f8d3d6faa4033ac0b2305c27fbc67efd5d8c021",
+      "fetched_at": "2025-11-17T19:05:29.646Z"
+    },
+    {
+      "chunk_id": "hdfc-small-cap-fund-direct-growth__fund_manager",
+      "scheme_id": "hdfc-small-cap-fund-direct-growth",
+      "section_type": "fund_manager",
+      "source_url": "https://groww.in/mutual-funds/hdfc-small-cap-fund-direct-growth",
+      "hash": "ed92e94e288d906e91e85d633b9da6da5c5793b4982577c27bdfc4a72639c18f",
+      "fetched_at": "2025-11-17T19:05:29.646Z"
+    },
+    {
+      "chunk_id": "hdfc-small-cap-fund-direct-growth__facts_performance",
+      "scheme_id": "hdfc-small-cap-fund-direct-growth",
+      "section_type": "facts_performance",
+      "source_url": "https://groww.in/mutual-funds/hdfc-small-cap-fund-direct-growth",
+      "hash": "4f7b33e6daabfebdea0a54f6cffa33e630653d14c419a4f278df688d95bb3980",
+      "fetched_at": "2025-11-17T19:05:29.646Z"
+    },
+    {
+      "chunk_id": "hdfc-small-cap-fund-direct-growth__portfolio_holdings",
+      "scheme_id": "hdfc-small-cap-fund-direct-growth",
+      "section_type": "portfolio_holdings",
+      "source_url": "https://groww.in/mutual-funds/hdfc-small-cap-fund-direct-growth",
+      "hash": "16cbd93f4dbc7e35d756978c42bbc1c80f4a1a1c63103aec5ce05ffdfc617c0b",
+      "fetched_at": "2025-11-17T19:05:29.646Z"
+    },
+    {
+      "chunk_id": "hdfc-small-cap-fund-direct-growth__portfolio_sectors",
+      "scheme_id": "hdfc-small-cap-fund-direct-growth",
+      "section_type": "portfolio_sectors",
+      "source_url": "https://groww.in/mutual-funds/hdfc-small-cap-fund-direct-growth",
+      "hash": "dbde02ffedd2cf2b403301cf9ea16f03d7f6cd49e450a82df1df2f16a2eb89aa",
+      "fetched_at": "2025-11-17T19:05:29.646Z"
+    },
+    {
+      "chunk_id": "hdfc-small-cap-fund-direct-growth__advance_ratios",
+      "scheme_id": "hdfc-small-cap-fund-direct-growth",
+      "section_type": "advance_ratios",
+      "source_url": "https://groww.in/mutual-funds/hdfc-small-cap-fund-direct-growth",
+      "hash": "8f50da7c554faf83037dfea19b1fd20cf313a9a9e87b5b98a63eed167f0318c1",
+      "fetched_at": "2025-11-17T19:05:29.646Z"
+    },
+    {
+      "chunk_id": "hdfc-small-cap-fund-direct-growth__fees",
+      "scheme_id": "hdfc-small-cap-fund-direct-growth",
+      "section_type": "fees",
+      "source_url": "https://groww.in/mutual-funds/hdfc-small-cap-fund-direct-growth",
+      "hash": "095c718b1bce9fbfc6decdd29bbcb907894358643f6a0811b6f101c7d8143d49",
+      "fetched_at": "2025-11-17T19:05:29.646Z"
+    },
+    {
+      "chunk_id": "hdfc-small-cap-fund-direct-growth__riskometer_benchmark",
+      "scheme_id": "hdfc-small-cap-fund-direct-growth",
+      "section_type": "riskometer_benchmark",
+      "source_url": "https://groww.in/mutual-funds/hdfc-small-cap-fund-direct-growth",
+      "hash": "f60858bcb28227dd684f4ce815f80886eccf26631333ae8047e868c163564490",
+      "fetched_at": "2025-11-17T19:05:29.646Z"
+    },
+    {
+      "chunk_id": "hdfc-small-cap-fund-direct-growth__faq__past-expense-ratio-exit-load",
+      "scheme_id": "hdfc-small-cap-fund-direct-growth",
+      "section_type": "faq",
+      "source_url": "https://groww.in/mutual-funds/hdfc-small-cap-fund-direct-growth",
+      "hash": "f4412977cc58c7d52e7ec3a2fd16a1bc8eb17ce6fe40144be1705f63ce63f942",
+      "fetched_at": "2025-11-17T19:05:29.646Z"
+    },
+    {
+      "chunk_id": "hdfc-small-cap-fund-direct-growth__faq__expense-ratio-0-67-",
+      "scheme_id": "hdfc-small-cap-fund-direct-growth",
+      "section_type": "faq",
+      "source_url": "https://groww.in/mutual-funds/hdfc-small-cap-fund-direct-growth",
+      "hash": "72c266bbd766c2f802015edab38c1177ae193ef1238659532435bdd559899ba8",
+      "fetched_at": "2025-11-17T19:05:29.646Z"
+    },
+    {
+      "chunk_id": "hdfc-small-cap-fund-direct-growth__faq__stamp-duty",
+      "scheme_id": "hdfc-small-cap-fund-direct-growth",
+      "section_type": "faq",
+      "source_url": "https://groww.in/mutual-funds/hdfc-small-cap-fund-direct-growth",
+      "hash": "37395fa4dbcaa66da2a6b70e9d41346a2f6d6168a51d65f3e2008dc4ad773988",
+      "fetched_at": "2025-11-17T19:05:29.646Z"
+    },
+    {
+      "chunk_id": "hdfc-small-cap-fund-direct-growth__faq__tax-implication",
+      "scheme_id": "hdfc-small-cap-fund-direct-growth",
+      "section_type": "faq",
+      "source_url": "https://groww.in/mutual-funds/hdfc-small-cap-fund-direct-growth",
+      "hash": "33efdee240712e7e643b9cb3a7444e2d9f9cb017ff5a5432ade314a2f07e261a",
+      "fetched_at": "2025-11-17T19:05:29.646Z"
+    },
+    {
+      "chunk_id": "hdfc-small-cap-fund-direct-growth__faq__how-to-invest-in-hdfc-small-cap-fund-direct-growth",
+      "scheme_id": "hdfc-small-cap-fund-direct-growth",
+      "section_type": "faq",
+      "source_url": "https://groww.in/mutual-funds/hdfc-small-cap-fund-direct-growth",
+      "hash": "e2130eb9f5751727f52b81ea5ca5d42df682f4b45cd52b9baf5ddb31810cf530",
+      "fetched_at": "2025-11-17T19:05:29.646Z"
+    },
+    {
+      "chunk_id": "hdfc-small-cap-fund-direct-growth__faq__what-kind-of-returns-does-hdfc-small-cap-fund-dire",
+      "scheme_id": "hdfc-small-cap-fund-direct-growth",
+      "section_type": "faq",
+      "source_url": "https://groww.in/mutual-funds/hdfc-small-cap-fund-direct-growth",
+      "hash": "50076411adf8e43d87ec3e03dca879015c4362942216afbd2d5fb1d5bf1a2889",
+      "fetched_at": "2025-11-17T19:05:29.646Z"
+    },
+    {
+      "chunk_id": "hdfc-small-cap-fund-direct-growth__faq__how-much-expense-ratio-is-charged-by-hdfc-small-ca",
+      "scheme_id": "hdfc-small-cap-fund-direct-growth",
+      "section_type": "faq",
+      "source_url": "https://groww.in/mutual-funds/hdfc-small-cap-fund-direct-growth",
+      "hash": "accab8ba0bf2e136889872c1d2b75ef8dcd75ec5fad7a37411510e29b6bbd8df",
+      "fetched_at": "2025-11-17T19:05:29.646Z"
+    },
+    {
+      "chunk_id": "hdfc-small-cap-fund-direct-growth__faq__what-is-the-aum-of-hdfc-small-cap-fund-direct-grow",
+      "scheme_id": "hdfc-small-cap-fund-direct-growth",
+      "section_type": "faq",
+      "source_url": "https://groww.in/mutual-funds/hdfc-small-cap-fund-direct-growth",
+      "hash": "518c183b9f7c2d33ca8a59eaecf8eeaccabab0da920a8a14b0bfd7b1c5396d8b",
+      "fetched_at": "2025-11-17T19:05:29.646Z"
+    },
+    {
+      "chunk_id": "hdfc-small-cap-fund-direct-growth__faq__how-to-redeem-hdfc-small-cap-fund-direct-growth-if",
+      "scheme_id": "hdfc-small-cap-fund-direct-growth",
+      "section_type": "faq",
+      "source_url": "https://groww.in/mutual-funds/hdfc-small-cap-fund-direct-growth",
+      "hash": "24330859db627e2802f563d3ef00b36321e073a78b5f822e81ec74cbeb6b91bd",
+      "fetched_at": "2025-11-17T19:05:29.646Z"
+    },
+    {
+      "chunk_id": "hdfc-small-cap-fund-direct-growth__faq__can-i-invest-in-sip-and-lump-sum-of-hdfc-small-cap",
+      "scheme_id": "hdfc-small-cap-fund-direct-growth",
+      "section_type": "faq",
+      "source_url": "https://groww.in/mutual-funds/hdfc-small-cap-fund-direct-growth",
+      "hash": "36dd8f9a0edcc84981796fb9e482349e4344e0a383170c78a261a8d21a721283",
+      "fetched_at": "2025-11-17T19:05:29.646Z"
+    },
+    {
+      "chunk_id": "hdfc-small-cap-fund-direct-growth__faq__what-is-the-nav-of-hdfc-small-cap-fund-direct-grow",
+      "scheme_id": "hdfc-small-cap-fund-direct-growth",
+      "section_type": "faq",
+      "source_url": "https://groww.in/mutual-funds/hdfc-small-cap-fund-direct-growth",
+      "hash": "1bf9757f781b63661bb8db5bbd062076a26abdc3b054d7d933bb7b7cfc6e1815",
+      "fetched_at": "2025-11-17T19:05:29.646Z"
+    },
+    {
+      "chunk_id": "hdfc-small-cap-fund-direct-growth__tax_redemption",
+      "scheme_id": "hdfc-small-cap-fund-direct-growth",
+      "section_type": "tax_redemption",
+      "source_url": "https://groww.in/mutual-funds/hdfc-small-cap-fund-direct-growth",
+      "hash": "aeee0a25406eac5f6bfb57464c133fb3119191744f833a1bb055a869a1ebac06",
+      "fetched_at": "2025-11-17T19:05:29.646Z"
+    },
+    {
+      "chunk_id": "hdfc-small-cap-fund-direct-growth__contact_details",
+      "scheme_id": "hdfc-small-cap-fund-direct-growth",
+      "section_type": "contact_details",
+      "source_url": "https://groww.in/mutual-funds/hdfc-small-cap-fund-direct-growth",
+      "hash": "acb9411ab86a9a5f1eaf2f527c8ba20e4886e6f9640cf60d9228f968d725a0b0",
+      "fetched_at": "2025-11-17T19:05:29.646Z"
+    },
+    {
+      "chunk_id": "hdfc-small-cap-fund-direct-growth__regulatory_links",
+      "scheme_id": "hdfc-small-cap-fund-direct-growth",
+      "section_type": "regulatory_links",
+      "source_url": "https://groww.in/mutual-funds/hdfc-small-cap-fund-direct-growth",
+      "hash": "83e277a98d311583a46622ab6b71695c8f6c9b71862e46b8fa44c2fb1bbb04a7",
+      "fetched_at": "2025-11-17T19:05:29.646Z"
+    },
+    {
+      "chunk_id": "hdfc-flexi-cap-fund-direct-growth__fund_manager",
+      "scheme_id": "hdfc-flexi-cap-fund-direct-growth",
+      "section_type": "fund_manager",
+      "source_url": "https://groww.in/mutual-funds/hdfc-flexi-cap-fund-direct-growth",
+      "hash": "93eacdd5cef914a9554d5776cf79d27adf4b4aefbf09f9c2428f1e86c7614b5b",
+      "fetched_at": "2025-11-17T19:05:39.353Z"
+    },
+    {
+      "chunk_id": "hdfc-taxsaver-fund-direct-growth__fund_manager",
+      "scheme_id": "hdfc-taxsaver-fund-direct-growth",
+      "section_type": "fund_manager",
+      "source_url": "https://groww.in/mutual-funds/hdfc-taxsaver-fund-direct-growth",
+      "hash": "93eacdd5cef914a9554d5776cf79d27adf4b4aefbf09f9c2428f1e86c7614b5b",
+      "fetched_at": "2025-11-17T19:05:45.954Z"
+    },
+    {
+      "chunk_id": "regulatory-and-other-information__regulatory_links",
+      "scheme_id": "regulatory-and-other-information",
+      "section_type": "regulatory_links",
+      "source_url": "https://groww.in/regulatory-and-other-information",
+      "hash": "604b277eb67f1a9019888317e99c2fabb904d0e0d41f3eec0391c547da0adc9d",
+      "fetched_at": "2025-11-17T19:05:52.635Z"
+    },
+    {
+      "chunk_id": "download-forms__downloads",
+      "scheme_id": "download-forms",
+      "section_type": "downloads",
+      "source_url": "https://groww.in/download-forms",
+      "hash": "0667d1f695bba59fb995dc433959448206eaaf7ba143dfc13f68d4e8df2f1b57",
+      "fetched_at": "2025-11-17T19:05:59.109Z"
+    }
+  ]
+}

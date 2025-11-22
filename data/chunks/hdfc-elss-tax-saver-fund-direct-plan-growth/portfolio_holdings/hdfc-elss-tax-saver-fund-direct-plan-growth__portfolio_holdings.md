@@ -1,0 +1,14 @@
+## Top Holdings
+
+| Name | Sector | Instrument | Assets |
+| --- | --- | --- | --- |
+| HDFC Bank Ltd. | Financial | Equity | 9.53% |
+| ICICI Bank Ltd. | Financial | Equity | 8.61% |
+| Axis Bank Ltd. | Financial | Equity | 8.60% |
+| Reliance Industries Ltd. | Energy | Equity | 6.72% |
+| Infosys Ltd. | IT Services | Equity | 5.38% |
+| Bharti Airtel Ltd. | Telecom | Equity | 4.85% |
+| State Bank of India | Financial | Equity | 4.21% |
+| Larsen & Toubro Ltd. | Construction | Equity | 4.08% |
+| TCS Ltd. | IT Services | Equity | 3.94% |
+| Bajaj Finance Ltd. | Financial | Equity | 3.67% |
